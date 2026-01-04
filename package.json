@@ -1,0 +1,30 @@
+{
+  "name": "realitaa-netlify-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "lint": "eslint --ext .js,.vue,.ts app/",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@nuxt/content": "^3.10.0",
+    "@nuxt/eslint": "^1.12.1",
+    "@nuxt/fonts": "^0.12.1",
+    "@nuxt/hints": "^1.0.0-alpha.5",
+    "@nuxt/icon": "^2.1.1",
+    "@nuxt/image": "^2.0.0",
+    "@tailwindcss/vite": "^4.1.18",
+    "better-sqlite3": "^12.5.0",
+    "eslint": "^9.39.2",
+    "nuxt": "^4.2.2",
+    "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.7.4"
+  }
+}
