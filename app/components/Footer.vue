@@ -13,9 +13,9 @@
           <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Reza Mulia Putra</h3>
           <p class="text-gray-600 dark:text-gray-400 mb-4">Backend Developer</p>
           <div class="flex gap-4">
-            <template v-for="item in socialMedia" :key="item.name">
-             <a :href="item.href" class="text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
-               <Icon :name="item.icon" class="w-6 h-6" />
+            <template v-for="item in socialMedia" :key="item.label">
+             <a :href="item.href" target="_blank" class="text-gray-400 hover:text-gray-900 dark:hover:text-white transition">
+               <Icon :name="item.outlineIcon" class="w-6 h-6" />
              </a>
             </template>
           </div>
@@ -52,28 +52,12 @@
 
 <script setup lang="ts">
   const navList = useNavList()
+  const socialMedia = useCTA()
+
   // Reused Style
   const footerLink =
     "text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition"
 
   const sectionTitle =
     "text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-4"
-
-  const socialMedia = [
-    {
-      name: "GitHub",
-      href: "https://github.com/realitaa",
-      icon: "ph:github-logo-bold",
-    },
-    {
-      name: "LinkedIn",
-      href: "https://linkedin.com/in/realitaa",
-      icon: "ph:linkedin-logo-bold",
-    },
-    {
-      name: "Twitter",
-      href: "https://twitter.com/realitaa",
-      icon: "ph:twitter-logo-bold",
-    },
-  ]
 </script>

@@ -5,7 +5,7 @@
     <!-- Mode Terang: Bottom Gradient Radial -->
     <!-- Mode Gelap: Azure Depths -->
     <!-- Using Tailwind classes for convenience or style binding -->
-    <div class="fixed inset-0 z-0 pointer-events-none">
+    <div ref="host" class="fixed inset-0 z-0 pointer-events-none">
        <!-- Dark Mode Azure Depths -->
        <div class="absolute inset-0 hidden dark:block bg-[radial-gradient(125%_125%_at_50%_100%,#000000_40%,#010133_100%)]"></div>
        <!-- Light Mode Bottom Gradient -->
@@ -26,7 +26,16 @@
 </template>
 
 <script setup lang="ts">
-// Layout logic
+import { useStarfieldBackground } from '../composables/useStarfieldBackground'
+
+const host = ref<HTMLElement | null>(null)
+
+useStarfieldBackground(host, {
+  density: 1,
+  speed: 1,
+  trailAlpha: 0.18,
+  safeRadius: 160
+})
 </script>
 
 <style>
