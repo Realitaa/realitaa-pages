@@ -17,5 +17,10 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
+  icon: {
+    serverBundle: {
+      collections: ['mdi', 'qlementine-icons']
+    }
+  },
   compatibilityDate: '2026-01-05',
 })
