@@ -17,5 +17,5 @@
 </template>
 
 <script setup lang="ts">
-import { toggleTheme, isDark } from '~/composables/useThemeToggle'
+const { toggleTheme, isDark } = useThemeToggle()
 </script>

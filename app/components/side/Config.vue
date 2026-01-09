@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import { toggleTheme, isDark } from '~/composables/useThemeToggle'
+const { toggleTheme, isDark } = useThemeToggle()
 // Reused Style
 const configLink = "flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-colors text-sm font-medium text-gray-600 dark:text-gray-300"
 </script>
