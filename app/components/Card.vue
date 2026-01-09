@@ -10,16 +10,64 @@ defineProps<{
 </script>
 
 <template>
-  <div class="transition-all transform hover:-translate-y-2 duration-300 h-full rounded-3xl border border-gray-300 hover:border-gray-500 dark:border-white/30 dark:hover:border-white/50 dark:hover:border-primary/50">
-    <figure v-if="image">
-      <img :src="image" :alt="title" class="w-full h-48 object-cover" />
+  <article
+    class="group relative h-full overflow-hidden rounded-3xl
+           border border-black/10 dark:border-white/15
+           bg-white/70 dark:bg-black/10
+           backdrop-blur-xs
+           transition-all duration-300
+           hover:-translate-y-2
+           hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.25)]
+           dark:hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.25)]">
+
+    <!-- Glow accent (dark mode only) -->
+    <div
+      class="pointer-events-none absolute inset-0 rounded-3xl
+             opacity-0 transition-opacity duration-300
+             dark:group-hover:opacity-100
+             bg-linear-to-br from-primary/20 via-transparent to-transparent blur-xl">
+    </div>
+
+    <!-- Image -->
+    <figure v-if="image" class="relative">
+      <img
+        :src="image"
+        :alt="title"
+        class="h-48 w-full object-cover"
+      />
+      <!-- image overlay -->
+      <div class="absolute inset-0 bg-linear-to-t from-black/30 to-transparent"></div>
     </figure>
-    <div class="p-4 text-center">
-      <div v-if="icon" class="text-4xl">
+
+    <!-- Content -->
+    <div class="relative z-10 p-6 text-center">
+      <div v-if="icon" class="mb-4 text-4xl text-primary">
         <Icon :name="icon" />
       </div>
-      <h2 v-if="title" class="text-xl font-bold mb-2">{{ title }}</h2>
-      <p v-if="description" class="text-base-content/80 mb-6">{{ description }}</p>
+
+      <h3
+        v-if="title"
+        class="mb-3 text-xl font-semibold tracking-tight
+               text-gray-900 dark:text-white">
+        {{ title }}
+      </h3>
+
+      <p
+        v-if="description"
+        class="mx-auto max-w-prose text-sm leading-relaxed
+               text-gray-600 dark:text-white/70">
+        {{ description }}
+      </p>
+
+      <!-- CTA (optional) -->
+      <a
+        v-if="cta && link"
+        :href="link"
+        class="mt-6 inline-flex items-center gap-2 text-sm font-medium
+               text-primary hover:underline">
+        {{ cta }}
+        <span class="transition-transform group-hover:translate-x-1">→</span>
+      </a>
     </div>
-  </div>
+  </article>
 </template>

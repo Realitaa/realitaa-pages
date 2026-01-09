@@ -3,7 +3,7 @@ const quote = useQuote()
 </script>
 
 <template>
-  <section class="py-20 bg-base-100 border-t border-base-200">
+  <section class="py-20 bg-base-100 border-t border-base-200 h-[calc(100vh-25rem)] flex items-center">
     <div class="container mx-auto px-4 text-center max-w-4xl">
       <div class="mb-6">
         <div class="w-24 overflow-hidden rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 mx-auto">
