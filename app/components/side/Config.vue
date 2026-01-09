@@ -1,8 +1,8 @@
 <template>
   <div class="flex items-center justify-between">
-    <button :class="configLink">
-      <Icon name="ph:sun-bold" class="w-5 h-5" />
-      <span>Theme</span>
+    <button @click="toggleTheme" :class="configLink">
+      <Icon :name="isDark ? 'ph:moon-bold' : 'ph:sun-bold'" class="w-5 h-5" />
+      <span>{{ isDark ? 'Dark' : 'Light' }}</span>
     </button>
     
     <button :class="configLink">
@@ -13,6 +13,7 @@
 </template>
 
 <script setup lang="ts">
+import { toggleTheme, isDark } from '~/composables/useThemeToggle'
 // Reused Style
 const configLink = "flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-colors text-sm font-medium text-gray-600 dark:text-gray-300"
 </script>

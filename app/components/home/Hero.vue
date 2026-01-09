@@ -6,7 +6,7 @@ const subheadline = ['Fullstack Web Developer', 'AI/ML Enthusiast']
 <template>
   <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
     <div class="text-center z-10 px-4">
-      <h1 class="text-5xl md:text-7xl font-bold mb-6 -m-16 bg-clip-text bg-gradient-to-r from-primary to-secondary animate-gradient">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 -m-16 bg-clip-text bg-linear-to-r from-primary to-secondary animate-gradient">
         {{ headline }}
       </h1>
       <div class="text-xl md:text-2xl text-base-content/80 mb-8 font-light tracking-wide">

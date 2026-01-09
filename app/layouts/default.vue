@@ -16,7 +16,7 @@
     <Header />
 
     <!-- Main Content -->
-    <main class="flex-grow relative z-10 pt-16">
+    <main class="grow relative z-10 pt-16">
        <slot />
     </main>
 

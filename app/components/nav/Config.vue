@@ -1,8 +1,12 @@
 <template>
   <div class="hidden md:flex items-center gap-2 px-1.5 rounded-full backdrop-blur-xl bg-white/10 dark:bg-black/10 border border-white/20 dark:border-white/10 shadow-lg">
      <!-- Theme Toggle -->
-     <button class="flex items-center justify-center w-8 h-8 rounded-full hover:bg-white/20 dark:hover:bg-white/10 transition-colors" aria-label="Toggle Theme">
-      <Icon name="ph:sun-bold" class="w-5 h-5" />
+     <button 
+       @click="toggleTheme" 
+       class="flex items-center justify-center w-8 h-8 rounded-full hover:bg-white/20 dark:hover:bg-white/10 transition-colors" 
+       aria-label="Toggle Theme"
+     >
+      <Icon :name="isDark ? 'ph:moon-bold' : 'ph:sun-bold'" class="w-5 h-5" />
      </button>
      
      <!-- Language Toggle (Simulated for now) -->
@@ -13,5 +17,5 @@
 </template>
 
 <script setup lang="ts">
-// Logic for theme switching would ideally use a color mode module (e.g. @nuxtjs/color-mode) if installed, or manual class toggling.
+import { toggleTheme, isDark } from '~/composables/useThemeToggle'
 </script>

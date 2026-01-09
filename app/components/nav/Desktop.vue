@@ -1,7 +1,7 @@
 <template>
   <nav class="hidden md:flex items-center px-6 py-2 rounded-full relative overflow-hidden backdrop-blur-xl bg-white/10 dark:bg-black/10 border border-white/20 dark:border-white/10 shadow-lg ring-1 ring-black/5">
     <!-- Liquid Glass Effect Background -->
-    <div class="absolute inset-0 z-[-1] bg-gradient-to-br from-white/30 to-white/10 dark:from-white/5 dark:to-transparent opacity-50"></div>
+    <div class="absolute inset-0 z-[-1] bg-linear-to-br from-white/30 to-white/10 dark:from-white/5 dark:to-transparent opacity-50"></div>
     
     <ul class="flex items-center gap-6 text-sm font-medium text-gray-700 dark:text-gray-200">
       <li v-for="item in navList" :key="item.name">
