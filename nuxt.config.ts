@@ -29,5 +29,8 @@ export default defineNuxtConfig({
     preference: 'system',
     fallback: 'dark',
   },
+  image: {
+    domains: ['assets.realitaa.dev']
+  },
   compatibilityDate: '2026-01-05',
 })

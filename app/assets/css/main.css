@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @import "./scrollbar.css";
+@import "@glidejs/glide/dist/css/glide.core.min.css";
+@import "@glidejs/glide/dist/css/glide.theme.min.css";
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
