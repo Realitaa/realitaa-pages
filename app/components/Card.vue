@@ -40,34 +40,38 @@ defineProps<{
     </figure>
 
     <!-- Content -->
-    <div class="relative z-10 p-6 text-center">
-      <div v-if="icon" class="mb-4 text-4xl text-primary">
-        <Icon :name="icon" />
-      </div>
+    <div class="relative z-10 h-full">
+      <slot>
+        <div class="p-6 text-center">
+          <div v-if="icon" class="mb-4 text-4xl text-primary">
+            <Icon :name="icon" />
+          </div>
 
-      <h3
-        v-if="title"
-        class="mb-3 text-xl font-semibold tracking-tight
-               text-gray-900 dark:text-white">
-        {{ title }}
-      </h3>
+          <h3
+            v-if="title"
+            class="mb-3 text-xl font-semibold tracking-tight
+                   text-gray-900 dark:text-white">
+            {{ title }}
+          </h3>
 
-      <p
-        v-if="description"
-        class="mx-auto max-w-prose text-sm leading-relaxed
-               text-gray-600 dark:text-white/70">
-        {{ description }}
-      </p>
+          <p
+            v-if="description"
+            class="mx-auto max-w-prose text-sm leading-relaxed
+                   text-gray-600 dark:text-white/70">
+            {{ description }}
+          </p>
 
-      <!-- CTA (optional) -->
-      <a
-        v-if="cta && link"
-        :href="link"
-        class="mt-6 inline-flex items-center gap-2 text-sm font-medium
-               text-primary hover:underline">
-        {{ cta }}
-        <span class="transition-transform group-hover:translate-x-1">→</span>
-      </a>
+          <!-- CTA (optional) -->
+          <a
+            v-if="cta && link"
+            :href="link"
+            class="mt-6 inline-flex items-center gap-2 text-sm font-medium
+                   text-primary hover:underline">
+            {{ cta }}
+            <span class="transition-transform group-hover:translate-x-1">→</span>
+          </a>
+        </div>
+      </slot>
     </div>
   </article>
 </template>

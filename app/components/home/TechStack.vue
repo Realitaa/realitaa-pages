@@ -3,12 +3,10 @@ const { columnHeader, content } = useTechStack()
 </script>
 
 <template>
-  <section class="py-20 bg-base-200/30">
-    <div class="container mx-auto px-4 max-w-6xl">
-      <h2 class="text-3xl font-bold text-center">Tech Stack</h2>
-      <p class="prose prose-lg prose-invert text-center leading-relaxed my-12">
-        The technology that I used to build products.
-      </p>
+  <SectionWrapper class="bg-base-200/30" title="Tech Stack" containerClass="max-w-6xl">
+    <template #description>
+      The technology that I used to build products.
+    </template>
       
       <!-- Desktop View -->
       <div class="hidden lg:block overflow-x-auto">
@@ -46,6 +44,5 @@ const { columnHeader, content } = useTechStack()
         </div>
       </div>
 
-    </div>
-  </section>
+  </SectionWrapper>
 </template>

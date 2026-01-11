@@ -1,6 +1,6 @@
 <template>
-  <section id="contact" class="py-20 bg-primary text-primary-content">
-    <div class="container mx-auto px-4 text-center">
+  <SectionWrapper id="contact" class="bg-primary text-primary-content">
+    <div class="text-center">
       <h2 class="text-3xl font-bold mb-8">Ready to Collaborate?</h2>
       <p class="text-xl mb-12 max-w-2xl mx-auto opacity-90">I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
       
@@ -10,7 +10,7 @@
         </a>
       </div>
     </div>
-  </section>
+  </SectionWrapper>
 </template>
 
 <script setup lang="ts">
