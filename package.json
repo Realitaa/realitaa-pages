@@ -19,17 +19,20 @@
     "@nuxt/icon": "^2.1.1",
     "@nuxt/image": "^2.0.0",
     "@nuxtjs/color-mode": "^4.0.0",
+    "@primeuix/themes": "^2.0.2",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.1.18",
     "better-sqlite3": "^12.5.0",
     "eslint": "^9.39.2",
     "nuxt": "^4.2.2",
+    "primevue": "^4.5.4",
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/ph": "^1.2.2",
     "@iconify-json/qlementine-icons": "^1.2.13",
+    "@primevue/nuxt-module": "^4.5.4",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.7.4"
   }
