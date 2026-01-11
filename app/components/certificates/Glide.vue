@@ -12,6 +12,10 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  links: {
+    type: String,
+    required: false,
+  },
   certificates: {
     type: Array,
     required: true,
@@ -71,7 +75,9 @@ onUnmounted(() => {
     <div
       class="inline-block mb-8 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-sm font-semibold text-primary"
     >
-      {{ props.title }}
+      <a :href="props.links" target="_blank" :class="{ 'hover:underline': props.links }">
+        {{ props.title }}
+      </a>
     </div>
 
     <div class="glide w-full mx-auto" ref="glideRef">

@@ -2,6 +2,7 @@
 interface Certificate {
   id: number
   name: string
+  links: string
   certificate_list: any[]
 }
 
@@ -9,7 +10,7 @@ const {
   data: certificates,
   pending,
   error
-} = await useFetch<Certificate[]>('https://assets.realitaa.dev/certificates/dicoding/certificates.json', {
+} = await useFetch<Certificate[]>('https://assets.realitaa.dev/certificates/certificates.json', {
   lazy: true
 })
 </script>
@@ -38,6 +39,7 @@ const {
       >
         <CertificatesGlide
           :title="cert.name"
+          :links="cert.links"
           :certificates="cert.certificate_list"
         />
       </div>
