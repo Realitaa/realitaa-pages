@@ -1,4 +1,5 @@
 import tailwindcss from "@tailwindcss/vite";
+import Aura from '@primeuix/themes/aura';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -10,6 +11,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/hints',
     '@nuxtjs/color-mode',
+    '@primevue/nuxt-module',
   ],
   devtools: { enabled: true },
   css: ['./app/assets/css/main.css'],
@@ -31,6 +33,14 @@ export default defineNuxtConfig({
   },
   image: {
     domains: ['assets.realitaa.dev']
+  },
+  primevue: {
+    autoImport: false,
+    options: {
+      theme: {
+        preset: Aura
+      }
+    }
   },
   compatibilityDate: '2026-01-05',
 })

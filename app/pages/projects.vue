@@ -99,12 +99,13 @@ const projects = [
           <div class="bg-black/5 p-8 dark:bg-white/5 md:w-[30%] md:order-2 order-1 border-b md:border-b-0 md:border-l border-black/10 dark:border-white/10">
             <!-- Project Images -->
             <div class="mb-6 overflow-hidden rounded-xl shadow-lg transition-transform hover:scale-[1.02]">
-              <img
-                v-for="(img, i) in project.images"
-                :key="i"
-                :src="img"
-                :alt="project.title"
-                class="aspect-video w-full object-cover"
+              <Image
+                  v-for="(img, i) in project.images"
+                  :key="i"
+                  :src="img"
+                  :alt="project.title"
+                  imageClass="aspect-video w-full object-cover"
+                  preview
               />
             </div>
 
