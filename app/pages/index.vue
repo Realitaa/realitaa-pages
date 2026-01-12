@@ -6,7 +6,7 @@
   <HomeHowIBuildProducts />
   <HomeTechStack />
   <HomeFeaturedProjects />
-  <HomeCertificate />
+  <HomeFeaturedCertificate />
   <HomeWhatsNew />
   <HomeCallToAction />
   <HomeQuote />

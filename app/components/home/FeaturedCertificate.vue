@@ -10,15 +10,26 @@ const { featuredCertificates } = useCertificate(local)
       Here are some of the certificates that I have earned.
     </template>
     
-    <div v-if="featuredCertificates" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div v-for="(cert, index) in featuredCertificates" :key="index">
+    <div
+      v-if="featuredCertificates"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+    >
+      <div
+        v-for="(cert, index) in featuredCertificates"
+        :key="index"
+        :class="[
+          // tablet (md): item ke-3 ke tengah
+          index === 2 ? 'md:col-span-2 md:flex md:justify-center lg:col-span-1 lg:block' : ''
+        ]"
+      >
         <Card
           :title="cert.title.en"
           :description="cert.description.en"
           :image="local ? cert.image : 'https://assets.realitaa.dev/certificates/' + cert.image"
-          cta="View Certificate" 
+          cta="View Certificate"
           :link="cert.link"
           :truncate="true"
+          class="md:max-w-md"
         />
       </div>
     </div>
