@@ -1,18 +1,6 @@
 <script setup lang="ts">
-interface Certificate {
-  id: number
-  name: string
-  links: string
-  certificate_list: any[]
-}
-
-const {
-  data: certificates,
-  pending,
-  error
-} = await useFetch<Certificate[]>('https://assets.realitaa.dev/certificates/certificates.json', {
-  lazy: true
-})
+const local = false
+const { certificates, status, error } = useCertificate(local)
 </script>
 
 <template>
@@ -22,7 +10,7 @@ const {
     </template>
 
     <!-- Loading -->
-    <div v-if="pending" class="py-16 text-center opacity-70">
+    <div v-if=" status === 'pending'" class="py-16 text-center opacity-70">
       Loading certificates...
     </div>
 
@@ -41,6 +29,7 @@ const {
           :title="cert.name"
           :links="cert.links"
           :certificates="cert.certificate_list"
+          :local="local"
         />
       </div>
     </div>

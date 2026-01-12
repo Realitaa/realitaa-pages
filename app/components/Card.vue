@@ -50,14 +50,14 @@ defineProps<{
           <h3
             v-if="title"
             class="mb-3 text-xl font-semibold tracking-tight
-                   text-gray-900 dark:text-white">
+                   text-gray-900 dark:text-white truncate">
             {{ title }}
           </h3>
 
           <p
             v-if="description"
             class="mx-auto max-w-prose text-sm leading-relaxed
-                   text-gray-600 dark:text-white/70">
+                   text-gray-600 dark:text-white/70 truncate">
             {{ description }}
           </p>
 
@@ -66,7 +66,7 @@ defineProps<{
             v-if="cta && link"
             :href="link"
             class="mt-6 inline-flex items-center gap-2 text-sm font-medium
-                   text-primary hover:underline">
+                   text-primary">
             {{ cta }}
             <span class="transition-transform group-hover:translate-x-1">→</span>
           </a>
