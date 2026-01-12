@@ -1,10 +1,9 @@
 <script setup lang="ts">
-const local = false
-const {
-  projects,
-  status,
-  error
-} = useProjects(local)
+const { projects, status, error } = useProjects()
+const { assetsBaseUrl } = useRuntimeConfig().public
+
+const imageUrl = (img: string) =>
+  `${assetsBaseUrl}/projects/${img}`
 </script>
 
 <template>
@@ -80,7 +79,7 @@ const {
               <Image
                   v-for="(img, i) in project.images"
                   :key="i"
-                  :src="local ? img : 'https://assets.realitaa.dev/projects/' + img"
+                  :src="imageUrl(img)"
                   :alt="project.title"
                   imageClass="aspect-video w-full object-cover"
                   preview

@@ -1,7 +1,9 @@
 <script setup lang="ts">
-const local = false
-const { featuredCertificates } = useCertificate(local)
+const { featuredCertificates } = useCertificates()
+const { assetsBaseUrl } = useRuntimeConfig().public
 
+const imageUrl = (img: string) =>
+  `${assetsBaseUrl}/certificates/${img}`
 </script>
 
 <template>
@@ -25,7 +27,7 @@ const { featuredCertificates } = useCertificate(local)
         <Card
           :title="cert.title.en"
           :description="cert.description.en"
-          :image="local ? cert.image : 'https://assets.realitaa.dev/certificates/' + cert.image"
+          :image="imageUrl(cert.image)"
           cta="View Certificate"
           :link="cert.link"
           :truncate="true"

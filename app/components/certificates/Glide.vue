@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import Glide from '@glidejs/glide'
 import { Images } from '@glidejs/glide/dist/glide.modular.esm'
 import { ref, onMounted, onUnmounted } from 'vue'
@@ -6,6 +6,10 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const glideRef = ref(null)
 let glide = null
 const locale = ref('en')
+const { assetsBaseUrl } = useRuntimeConfig().public
+
+const imageUrl = (img: string) =>
+  `${assetsBaseUrl}/certificates/${img}`
 
 const props = defineProps({
   title: {
@@ -19,12 +23,7 @@ const props = defineProps({
   certificates: {
     type: Array,
     required: true,
-  },
-  local: {
-    type: Boolean,
-    required: false,
-    default: false,
-  },
+  }
 })
 
 let activeCertificate = ref(props.certificates[0])
@@ -97,7 +96,7 @@ onUnmounted(() => {
             <!-- Aspect Ratio Container -->
             <div class="relative w-full overflow-hidden bg-gray-100 dark:bg-gray-800">
                <img
-                :src="local ? certificate.image : 'https://assets.realitaa.dev/certificates/' + getLocalizedValue(certificate.image)"
+                :src="imageUrl(certificate.image)"
                 :alt="getLocalizedValue(certificate.title)"
                 class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />

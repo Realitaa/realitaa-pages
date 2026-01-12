@@ -1,6 +1,8 @@
 import tailwindcss from "@tailwindcss/vite";
 import Aura from '@primeuix/themes/aura';
 
+const envBool = (value?: string) => value === 'true'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -14,6 +16,12 @@ export default defineNuxtConfig({
     '@primevue/nuxt-module',
   ],
   devtools: { enabled: true },
+  runtimeConfig: {
+    public: {
+      assetsBaseUrl:
+        process.env.NUXT_PUBLIC_ASSETS_BASE_URL || 'https://assets.realitaa.dev'
+    }
+  },
   css: ['./app/assets/css/main.css'],
   vite: {
     plugins: [

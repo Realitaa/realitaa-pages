@@ -1,6 +1,5 @@
 <script setup lang="ts">
-const local = false
-const { certificates, status, error } = useCertificate(local)
+const { certificates, status, error } = useCertificates()
 </script>
 
 <template>
@@ -29,7 +28,6 @@ const { certificates, status, error } = useCertificate(local)
           :title="cert.name"
           :links="cert.links"
           :certificates="cert.certificate_list"
-          :local="local"
         />
       </div>
     </div>

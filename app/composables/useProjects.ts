@@ -18,37 +18,25 @@ export interface ProjectItem {
   rank?: number
 }
 
-export const useProjects = (local = false) => {
-  const url = local
-    ? '/projects.json'
-    : 'https://assets.realitaa.dev/projects/projects.json'
+export interface FeaturedProject {
+  title: string
+  description: string
+  image: string | null
+  link: string | null
+  cta: string | null
+}
 
-  const { data, status, error, refresh } = useFetch<ProjectItem[]>(url, {
-    lazy: true
-  })
-
-  const featured = computed(() => {
-    if (!data.value) return []
-
-    return data.value
-      .filter((project): project is ProjectItem & { rank: number } => typeof project.rank === 'number')
-      .sort((a, b) => a.rank - b.rank)
-      .slice(0, 3)
-      .map(project => ({
-        title: project.title,
-        description: project.description,
-        image: project.images[0],
-        link: project.cta[0]?.link,
-        cta: project.cta[0]?.label
-      }))
-  })
+export const useProjects = () => {
+  const { data, status, error, refresh } = useFetch<{
+    projects: ProjectItem[]
+    featured: FeaturedProject[]
+  }>('/api/projects')
 
   return {
-    projects: data,
-    featuredProjects: featured,
+    projects: computed(() => data.value?.projects ?? []),
+    featuredProjects: computed(() => data.value?.featured ?? []),
     status,
     error,
     refresh
   }
 }
-

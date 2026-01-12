@@ -1,6 +1,9 @@
 <script setup lang="ts">
-const local = true 
-const { featuredProjects } = useProjects(local)
+const { featuredProjects } = useProjects()
+const { assetsBaseUrl } = useRuntimeConfig().public
+
+const imageUrl = (img: string) =>
+  `${assetsBaseUrl}/projects/${img}`
 </script>
 
 <template>
@@ -14,7 +17,7 @@ const { featuredProjects } = useProjects(local)
         <Card
           :title="project.title"
           :description="project.description"
-          :image="local ? project.image : 'https://assets.realitaa.dev/projects/' + project.image"
+          :image="imageUrl(project.image)"
           cta="View Project" 
           :link="project.link"
           :truncate="true"
