@@ -6,6 +6,7 @@ defineProps<{
   image?: string
   cta?: string
   link?: string
+  truncate?: boolean
 }>()
 </script>
 
@@ -50,14 +51,16 @@ defineProps<{
           <h3
             v-if="title"
             class="mb-3 text-xl font-semibold tracking-tight
-                   text-gray-900 dark:text-white truncate">
+                   text-gray-900 dark:text-white"
+            :class="{ truncate }">
             {{ title }}
           </h3>
 
           <p
             v-if="description"
             class="mx-auto max-w-prose text-sm leading-relaxed
-                   text-gray-600 dark:text-white/70 truncate">
+                   text-gray-600 dark:text-white/70"
+            :class="{ truncate }">
             {{ description }}
           </p>
 
@@ -66,7 +69,9 @@ defineProps<{
             v-if="cta && link"
             :href="link"
             class="mt-6 inline-flex items-center gap-2 text-sm font-medium
-                   text-primary">
+                   text-primary"
+            target="_blank"
+            >
             {{ cta }}
             <span class="transition-transform group-hover:translate-x-1">→</span>
           </a>

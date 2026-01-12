@@ -18,6 +18,7 @@ const { featuredCertificates } = useCertificate(local)
           :image="local ? cert.image : 'https://assets.realitaa.dev/certificates/' + cert.image"
           cta="View Certificate" 
           :link="cert.link"
+          :truncate="true"
         />
       </div>
     </div>
