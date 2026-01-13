@@ -1,0 +1,79 @@
+{
+  "seo": {
+    "home": {
+      "title": "Reza Mulia Putra | Backend Developer",
+      "description": "Backend developer yang fokus pada sistem web yang andal, terstruktur, dan siap produksi."
+    },
+    "projects": {
+      "title": "Proyek | Reza Mulia Putra",
+      "description": "Proyek yang pernah saya kerjakan."
+    },
+    "certificates": {
+      "title": "Sertifikat | Reza Mulia Putra",
+      "description": "Sertifikat yang pernah saya dapatkan."
+    },
+    "blog": {
+      "title": "Blog | Reza Mulia Putra",
+      "description": "Blog yang pernah saya tulis."
+    }
+  },
+  "nav": {
+    "home": "Beranda",
+    "projects": "Proyek",
+    "certificates": "Sertifikat",
+    "blog": "Blog"
+  },
+  "hero": {
+    "cta": "Kontak Saya"
+  },
+  "about": {
+    "title": "Tentang Saya",
+    "body": "Saya adalah mahasiswa Ilmu Komputer di Universitas Negeri Medan dan freelance developer dengan fokus pada backend development dan perancangan sistem aplikasi web. Berpengalaman membangun aplikasi web secara end-to-end, saya memahami keterkaitan antara frontend, backend, dan infrastruktur, dengan ketertarikan utama pada backend yang andal, terstruktur, dan siap produksi. Saya tertarik pada pengelolaan data, transaksi, kegagalan sistem, serta integrasi layanan eksternal. Di luar itu, saya memanfaatkan AI tools sebagai alat bantu produktivitas dan memahami perannya sebagai bagian dari sistem, bukan sekadar fitur. Fokus saya adalah membangun solusi teknis yang stabil, aman, dan dapat dipertanggungjawabkan."
+  },
+  "how_i_build_products": {
+    "title": "Bagaimana Saya Membangun Produk",
+    "card1": {
+      "title": "Fundamental Kuat",
+      "body": "Saya percaya pada fundamental yang kuat. Saya selalu mulai dari hal-hal mendasar dan membangunnya dari sana. Saya percaya bahwa ini adalah cara terbaik untuk membangun fondasi yang kokoh untuk proyek apa pun."
+    },
+    "card2": {
+      "title": "AI sebagai Alat",
+      "body": "Saya memanfaatkan AI sebagai alat bantu produktivitas dalam proses pengembangan dan pengambilan keputusan teknis."
+    },
+    "card3": {
+      "title": "Production Mindset",
+      "body": "Saya selalu berusaha membangun produk yangs siap produksi. Saya percaya bahwa ini adalah cara berpikir yang harus dimiliki oleh setiap developer."
+    }
+  },
+  "tech_stacks": {
+    "title": "Tech Stacks",
+    "subtitle": "Ini adalah teknologi yang pernah saya gunakan untuk membangun produk."
+  },
+  "featured_projects": {
+    "title": "Proyek Unggulan",
+    "subtitle": "Ini adalah proyek unggulan yang pernah saya buat.",
+    "cta": "Lihat Semua Proyek"
+  },
+  "featured_certificates": {
+    "title": "Sertifikat Unggulan",
+    "subtitle": "Ini adalah sertifikat unggulan yang pernah saya dapatkan.",
+    "cta": "Lihat Semua Sertifikat"
+  },
+  "whats_new": {
+    "title": "Apa yang Baru?",
+    "subtitle": "Ini adalah beberapa update dan informasi terbaru di blog saya.",
+    "cta": "Lihat Semua Blog"
+  },
+  "collaborate": {
+    "title": "Siap Bekerja Sama?",
+    "subtitle": "Jika Anda memiliki proyek atau perusahaan yang perlu bantuan, silakan hubungi saya. Saya selalu terbuka untuk berdiskusi tentang proyek baru, ide kreatif atau kesempatan untuk menjadi bagian dari visimu."
+  },
+  "projects": {
+    "title": "Proyek",
+    "subtitle": "Berikut adalah beberapa proyek publik saya, mulai dari aplikasi web hingga alat khusus."
+  },
+  "certificates": {
+    "title": "Sertifikat",
+    "subtitle": "Berikut adalah beberapa sertifikat yang pernah saya dapatkan."
+  }
+}
