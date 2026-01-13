@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     '@nuxt/hints',
     '@nuxtjs/color-mode',
     '@primevue/nuxt-module',
+    '@nuxtjs/i18n',
   ],
   devtools: { enabled: true },
   runtimeConfig: {
@@ -49,6 +50,14 @@ export default defineNuxtConfig({
         preset: Aura
       }
     }
+  },
+  i18n: {
+    defaultLocale: 'id',
+    locales: [
+      { code: 'id', name: 'Bahasa Indonesia', file: 'id.json' },
+    ],
+    strategy: 'no_prefix',
+    detectBrowserLanguage: false
   },
   compatibilityDate: '2026-01-05',
 })
