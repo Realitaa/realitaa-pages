@@ -10,9 +10,9 @@
      </button>
      
      <!-- Language Toggle (Simulated for now) -->
-     <button class="px-3 py-1 text-xs font-semibold rounded-full bg-white/20 dark:bg-white/10 hover:bg-white/30 transition-colors text-gray-800 dark:text-white">
+     <!-- <button class="px-3 py-1 text-xs font-semibold rounded-full bg-white/20 dark:bg-white/10 hover:bg-white/30 transition-colors text-gray-800 dark:text-white">
         EN
-     </button>
+     </button> -->
   </div>
 </template>
 

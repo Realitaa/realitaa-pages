@@ -42,7 +42,7 @@
     },
     "card3": {
       "title": "Production Mindset",
-      "body": "Saya selalu berusaha membangun produk yangs siap produksi. Saya percaya bahwa ini adalah cara berpikir yang harus dimiliki oleh setiap developer."
+      "body": "Saya selalu berusaha membangun produk yang siap produksi. Saya percaya bahwa ini adalah cara berpikir yang harus dimiliki oleh setiap developer."
     }
   },
   "tech_stacks": {
@@ -52,19 +52,22 @@
   "featured_projects": {
     "title": "Proyek Unggulan",
     "subtitle": "Ini adalah proyek unggulan yang pernah saya buat.",
-    "cta": "Lihat Semua Proyek"
+    "cta": "Lihat Proyek",
+    "section_cta": "Lihat Semua Proyek"
   },
   "featured_certificates": {
     "title": "Sertifikat Unggulan",
     "subtitle": "Ini adalah sertifikat unggulan yang pernah saya dapatkan.",
-    "cta": "Lihat Semua Sertifikat"
+    "cta": "Lihat Sertifikat",
+    "section_cta": "Lihat Semua Sertifikat"
   },
   "whats_new": {
     "title": "Apa yang Baru?",
     "subtitle": "Ini adalah beberapa update dan informasi terbaru di blog saya.",
-    "cta": "Lihat Semua Blog"
+    "cta": "Lihat Blog",
+    "section_cta": "Lihat Semua Blog"
   },
-  "collaborate": {
+  "call_to_action": {
     "title": "Siap Bekerja Sama?",
     "subtitle": "Jika Anda memiliki proyek atau perusahaan yang perlu bantuan, silakan hubungi saya. Saya selalu terbuka untuk berdiskusi tentang proyek baru, ide kreatif atau kesempatan untuk menjadi bagian dari visimu."
   },
@@ -74,6 +77,7 @@
   },
   "certificates": {
     "title": "Sertifikat",
-    "subtitle": "Berikut adalah beberapa sertifikat yang pernah saya dapatkan."
+    "subtitle": "Berikut adalah beberapa sertifikat yang pernah saya dapatkan.",
+    "cta": "Lihat"
   }
 }

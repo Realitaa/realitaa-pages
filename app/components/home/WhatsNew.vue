@@ -3,9 +3,9 @@ const news = useWhatsNew()
 </script>
 
 <template>
-  <SectionWrapper title="What's New?" containerClass="max-w-6xl">
+  <SectionWrapper :title="$t('whats_new.title')" containerClass="max-w-6xl">
     <template #description>
-      Here are some of the latest news and updates in my blog.
+      {{ $t('whats_new.subtitle') }}
     </template>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div v-for="(item, index) in news" :key="index">

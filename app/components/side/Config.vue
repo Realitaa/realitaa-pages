@@ -5,10 +5,10 @@
       <span>{{ isDark ? 'Dark' : 'Light' }}</span>
     </button>
     
-    <button :class="configLink">
+    <!-- <button :class="configLink">
       <Icon name="ph:globe-bold" class="w-5 h-5" />
       <span>English</span>
-    </button>
+    </button> -->
   </div>
 </template>
 

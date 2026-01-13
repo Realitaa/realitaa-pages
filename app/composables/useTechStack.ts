@@ -111,6 +111,12 @@ export const useTechStack = () => {
         description: "Start from GCP 1.x",
         link: "https://cloud.google.com"
       },
+      "Cloudflare": {
+        label: "Cloudflare",
+        icon: "devicon:cloudflare",
+        description: "Start from Cloudflare 1.x",
+        link: "https://cloudflare.com"
+      },
       "Supabase": {
         label: "Supabase",
         icon: "devicon:supabase",

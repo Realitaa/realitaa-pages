@@ -5,11 +5,13 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const glideRef = ref(null)
 let glide = null
-const locale = ref('en')
 const { assetsBaseUrl } = useRuntimeConfig().public
+const { locale } = useI18n()
 
-const imageUrl = (img: string) =>
-  `${assetsBaseUrl}/certificates/${img}`
+const imageUrl = (img: string | Record<string, string>) => {
+  const imagePath = typeof img === 'string' ? img : img[locale.value]
+  return `${assetsBaseUrl}/certificates/${imagePath}`
+}
 
 const props = defineProps({
   title: {
@@ -37,11 +39,6 @@ const goToSlide = (index, link) => {
     // Pindah ke slide yang diklik
     glide.go(`=${index}`)
   }
-}
-
-const getLocalizedValue = (obj) => {
-  if (typeof obj === 'string') return obj
-  return obj[locale.value] || obj['en'] || obj['id'] || ''
 }
 
 onMounted(() => {
@@ -97,7 +94,7 @@ onUnmounted(() => {
             <div class="relative w-full overflow-hidden bg-gray-100 dark:bg-gray-800">
                <img
                 :src="imageUrl(certificate.image)"
-                :alt="getLocalizedValue(certificate.title)"
+                :alt="certificate.title[locale]"
                 class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <!-- Overlay -->
@@ -108,7 +105,7 @@ onUnmounted(() => {
                 class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100"
               >
                   <span class="rounded-full bg-white/90 px-4 py-2 text-sm font-bold text-gray-900 shadow-lg backdrop-blur-sm">
-                    View
+                    {{ $t('certificates.cta') }}
                   </span>
               </div>
             </div>
@@ -147,10 +144,10 @@ onUnmounted(() => {
     <!-- Active Item Details -->
     <div class="mt-8 text-center" v-if="activeCertificate">
       <h3 class="mb-2 text-xl font-bold text-gray-900 dark:text-white">
-        {{ getLocalizedValue(activeCertificate.title) }}
+        {{ activeCertificate.title[locale] }}
       </h3>
       <p class="mx-auto max-w-2xl text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-        {{ getLocalizedValue(activeCertificate.description) }}
+        {{ activeCertificate.description[locale] }}
       </p>
     </div>
   </div>

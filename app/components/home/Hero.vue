@@ -17,7 +17,7 @@ const subheadline = ['Fullstack Web Developer', 'AI/ML Enthusiast']
       </div>
       <div class="flex flex-col md:flex-row gap-4 justify-center">
         <NuxtLink to="#contact" class="px-8 transform hover:-translate-y-2 border border-primary rounded-3xl py-2 transition-all duration-300 border-gray-300 hover:border-gray-500 dark:border-white/30 dark:hover:border-white/50 dark:hover:border-primary/50">
-          Contact Me
+          {{ $t('hero.cta') }}
         </NuxtLink>
       </div>
     </div>

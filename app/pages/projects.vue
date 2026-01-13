@@ -4,12 +4,14 @@ const { assetsBaseUrl } = useRuntimeConfig().public
 
 const imageUrl = (img: string) =>
   `${assetsBaseUrl}/projects/${img}`
+
+const { locale } = useI18n()
 </script>
 
 <template>
-  <SectionWrapper title="Projects" containerClass="max-w-6xl">
+  <SectionWrapper :title="$t('projects.title')" containerClass="max-w-6xl">
     <template #description>
-      A selection of my public projects, ranging from web applications to specialized tools.
+      {{ $t('projects.subtitle') }}
     </template>
 
     <!-- Loading -->
@@ -24,14 +26,14 @@ const imageUrl = (img: string) =>
 
     <!-- Data -->
     <div v-else class="mx-auto flex max-w-6xl flex-col gap-12">
-      <Card v-for="(project, index) in projects" :key="index">
+      <Card v-for="(project, index) in projects" :key="index" :title="project.title[locale]">
         <!-- Custom 70/30 Layout -->
         <div class="flex flex-col md:flex-row">
           <!-- DESKTOP LEFT (70%) / MOBILE BOTTOM Content -->
           <div class="flex flex-col justify-center p-8 md:w-[70%] md:order-1 order-2">
             <!-- Title -->
             <h3 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white md:text-3xl">
-              {{ project.title }}
+              {{ project.title[locale] }}
             </h3>
             
             <!-- Tech Stack (Mobile Position) -->
@@ -55,7 +57,7 @@ const imageUrl = (img: string) =>
 
             <!-- Description -->
             <p class="mb-6 text-gray-600 dark:text-white/70 leading-relaxed text-lg">
-              {{ project.description }}
+              {{ project.description[locale] }}
             </p>
 
             <!-- CTA -->
@@ -66,7 +68,7 @@ const imageUrl = (img: string) =>
                 :href="cta.link"
                 class="inline-flex items-center gap-2 rounded-full bg-primary/10 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-gray-500 dark:hover:text-white"
               >
-                {{ cta.label }}
+                {{ cta.label[locale] }}
                 <Icon :name="cta.icon || 'heroicons:arrow-right'" class="h-4 w-4" />
               </a>
             </div>

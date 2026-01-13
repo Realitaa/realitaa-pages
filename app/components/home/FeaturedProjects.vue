@@ -4,21 +4,23 @@ const { assetsBaseUrl } = useRuntimeConfig().public
 
 const imageUrl = (img: string) =>
   `${assetsBaseUrl}/projects/${img}`
+
+const { locale } = useI18n()
 </script>
 
 <template>
-  <SectionWrapper title="Featured Projects" containerClass="max-w-6xl">
+  <SectionWrapper :title="$t('featured_projects.title')" containerClass="max-w-6xl">
     <template #description>
-      Here are some of the projects that I have built.
+      {{ $t('featured_projects.subtitle') }}
     </template>
     
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
       <div v-for="(project, index) in featuredProjects" :key="index">
         <Card
-          :title="project.title"
-          :description="project.description"
+          :title="project.title[locale]"
+          :description="project.description[locale]"
           :image="imageUrl(project.image)"
-          cta="View Project" 
+          :cta="$t('featured_projects.cta')" 
           :link="project.link"
           :truncate="true"
         />
@@ -30,7 +32,7 @@ const imageUrl = (img: string) =>
         to="/projects"
         class="group p-2 btn btn-primary inline-flex items-center gap-2"
       >
-        See All Projects
+        {{ $t('featured_projects.section_cta') }}
         <span
           class="inline-block transition-transform duration-200 group-hover:translate-x-1"
         >

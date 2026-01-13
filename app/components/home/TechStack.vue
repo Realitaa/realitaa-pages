@@ -3,9 +3,9 @@ const { columnHeader, content } = useTechStack()
 </script>
 
 <template>
-  <SectionWrapper class="bg-base-200/30" title="Tech Stack" containerClass="max-w-6xl">
+  <SectionWrapper class="bg-base-200/30" :title="$t('tech_stacks.title')" containerClass="max-w-6xl">
     <template #description>
-      The technology that I used to build products.
+      {{ $t('tech_stacks.subtitle') }}
     </template>
       
       <!-- Desktop View -->

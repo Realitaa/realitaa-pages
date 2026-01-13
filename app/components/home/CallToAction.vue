@@ -1,8 +1,8 @@
 <template>
   <SectionWrapper id="contact" class="bg-primary text-primary-content">
     <div class="text-center">
-      <h2 class="text-3xl font-bold mb-8">Ready to Collaborate?</h2>
-      <p class="text-xl mb-12 max-w-2xl mx-auto opacity-90">I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+      <h2 class="text-3xl font-bold mb-8">{{ $t('call_to_action.title') }}</h2>
+      <p class="text-xl mb-12 max-w-2xl mx-auto opacity-90">{{ $t('call_to_action.subtitle') }}</p>
       
       <div class="flex flex-wrap justify-center gap-6">
         <a v-for="c in cta" :key="c.label" :href="c.href" target="_blank" class="btn btn-lg btn-outline btn-circle bg-base-100 text-base-content border-none hover:bg-base-200">

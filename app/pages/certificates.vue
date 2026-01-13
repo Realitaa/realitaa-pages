@@ -1,11 +1,12 @@
 <script setup lang="ts">
 const { certificates, status, error } = useCertificates()
+const { locale } = useI18n()
 </script>
 
 <template>
-  <SectionWrapper title="Certificates" containerClass="max-w-6xl">
+  <SectionWrapper :title="$t('certificates.title')" containerClass="max-w-6xl">
     <template #description>
-      A collection of certificates I have earned.
+      {{ $t('certificates.subtitle') }}
     </template>
 
     <!-- Loading -->

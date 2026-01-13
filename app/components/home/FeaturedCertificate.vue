@@ -4,12 +4,14 @@ const { assetsBaseUrl } = useRuntimeConfig().public
 
 const imageUrl = (img: string) =>
   `${assetsBaseUrl}/certificates/${img}`
+
+const { locale } = useI18n()
 </script>
 
 <template>
-  <SectionWrapper class="bg-base-200/50" title="Certificates" containerClass="max-w-6xl">
+  <SectionWrapper class="bg-base-200/50" :title="$t('featured_certificates.title')" containerClass="max-w-6xl">
     <template #description>
-      Here are some of the certificates that I have earned.
+      {{ $t('featured_certificates.subtitle') }}
     </template>
     
     <div
@@ -25,10 +27,10 @@ const imageUrl = (img: string) =>
         ]"
       >
         <Card
-          :title="cert.title.en"
-          :description="cert.description.en"
+          :title="cert.title[locale]"
+          :description="cert.description[locale]"
           :image="imageUrl(cert.image)"
-          cta="View Certificate"
+          :cta="$t('featured_certificates.cta')"
           :link="cert.link"
           :truncate="true"
           class="md:max-w-md"
@@ -41,7 +43,7 @@ const imageUrl = (img: string) =>
         to="/certificates"
         class="group p-2 btn btn-primary inline-flex items-center gap-2"
       >
-        See All Certificates
+        {{ $t('featured_certificates.section_cta') }}
         <span
           class="inline-block transition-transform duration-200 group-hover:translate-x-1"
         >
