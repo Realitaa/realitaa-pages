@@ -102,18 +102,11 @@ useSeoMeta({
               </header>
 
               <!-- Article Content -->
-              <div class="prose prose-gray max-w-none dark:prose-invert
-                          prose-headings:font-semibold prose-headings:text-gray-900 dark:prose-headings:text-white
-                          prose-h2:mt-8 prose-h2:border-b prose-h2:border-black/10 prose-h2:pb-2 dark:prose-h2:border-white/10
-                          prose-h3:mt-6
-                          prose-p:text-gray-600 dark:prose-p:text-white/70
-                          prose-a:text-primary prose-a:no-underline hover:prose-a:underline
-                          prose-code:rounded prose-code:bg-gray-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:before:content-none prose-code:after:content-none dark:prose-code:bg-white/10
-                          prose-pre:rounded-xl prose-pre:bg-gray-900 dark:prose-pre:bg-black/50
-                          prose-blockquote:border-primary prose-blockquote:not-italic
-                          prose-li:text-gray-600 dark:prose-li:text-white/70">
-                <ContentRenderer v-if="article" :value="article" />
-              </div>
+              <UApp>
+                <article>
+                  <ContentRenderer :value="article" />
+                </article>
+              </UApp>
             </div>
           </div>
 

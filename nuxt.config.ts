@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@primevue/nuxt-module',
     '@nuxtjs/i18n',
+    '@nuxt/ui',
   ],
   devtools: { enabled: true },
   runtimeConfig: {
@@ -58,6 +59,14 @@ export default defineNuxtConfig({
     ],
     strategy: 'no_prefix',
     detectBrowserLanguage: false
+  },
+  content: {
+    highlight: {
+      theme: {
+        default: 'github-light',
+        dark: 'github-dark'
+      }
+    }
   },
   compatibilityDate: '2026-01-05',
 })

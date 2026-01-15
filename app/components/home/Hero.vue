@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const headline = "Reza Mulia Putra"
-const subheadline = ['Fullstack Web Developer', 'AI/ML Enthusiast']
+const subheadline = ['Backend Developer', 'AI/ML Enthusiast']
 </script>
 
 <template>

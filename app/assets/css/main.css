@@ -4,6 +4,7 @@
 @import "@glidejs/glide/dist/css/glide.core.min.css";
 @import "@glidejs/glide/dist/css/glide.theme.min.css";
 @custom-variant dark (&:where(.dark, .dark *));
+@import "@nuxt/ui";
 
 @theme {
   --font-sans: "Google Sans Flex", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
