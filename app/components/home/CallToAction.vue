@@ -1,5 +1,5 @@
 <template>
-  <SectionWrapper id="contact" class="bg-primary text-primary-content">
+  <SectionWrapper id="call-to-action" class="text-primary-content">
     <div class="text-center">
       <h2 class="text-3xl font-bold mb-8">{{ $t('call_to_action.title') }}</h2>
       <p class="text-xl mb-12 max-w-2xl mx-auto opacity-90">{{ $t('call_to_action.subtitle') }}</p>

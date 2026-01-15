@@ -66,7 +66,7 @@ const { locale } = useI18n()
                 v-for="cta in project.cta"
                 :key="cta.label"
                 :href="cta.link"
-                class="inline-flex items-center gap-2 rounded-full bg-primary/10 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-gray-500 dark:hover:text-white"
+                class="inline-flex items-center gap-2 rounded-full bg-indigo-400/10 py-2 text-sm font-semibold transition-colors hover:text-gray-500 dark:hover:text-white"
               >
                 {{ cta.label[locale] }}
                 <Icon :name="cta.icon || 'heroicons:arrow-right'" class="h-4 w-4" />

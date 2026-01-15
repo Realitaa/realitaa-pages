@@ -145,7 +145,7 @@ useSeoMeta({
         class="inline-flex items-center gap-2 text-sm text-gray-500 transition-colors hover:text-primary dark:text-white/50 dark:hover:text-primary"
       >
         <Icon name="mdi:arrow-left" class="text-lg" />
-        Back to Blog
+        Kembali ke Blog
       </NuxtLink>
     </div>
 

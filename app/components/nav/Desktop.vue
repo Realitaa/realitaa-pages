@@ -5,7 +5,7 @@
     
     <ul class="flex items-center gap-6 text-sm font-medium text-gray-700 dark:text-gray-200">
       <li v-for="item in navList" :key="item.name">
-        <NuxtLink :to="item.href" class="hover:text-primary transition-colors duration-200" active-class="text-indigo-600 dark:text-indigo-400 font-semibold">
+        <NuxtLink :to="item.href" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200" active-class="text-indigo-600 dark:text-indigo-400 font-semibold">
           {{ item.name }}
         </NuxtLink>
       </li>
@@ -15,13 +15,6 @@
 
 <script setup lang="ts">
   const navList = useNavList()
-
-// Logic for hash links (#projects) could be enhanced to handle cross-page navigation properly if not covered by NuxtLink default behavior.
-// Current spec says:
-// 1. If at index: #projects scrolls
-// 2. If not at index: go to index#projects
-// NuxtLink handles to="/#projects" reasonably well, but sticky active states might need global state or route watcher.
-// For now, simple NuxtLink is a good start.
 </script>
 
 <style scoped>

@@ -33,7 +33,7 @@ const cardClass = computed(() => {
       class="pointer-events-none absolute inset-0 rounded-3xl
              opacity-0 transition-opacity duration-300
              dark:group-hover:opacity-100
-             bg-linear-to-br from-primary/20 via-transparent to-transparent blur-xl"
+             bg-linear-to-br from-indigo-400/20 via-transparent to-transparent blur-xl"
       v-if="glow">
     </div>
 
@@ -52,7 +52,7 @@ const cardClass = computed(() => {
     <div class="relative z-10 h-full">
       <slot>
         <div class="p-6 text-center">
-          <div v-if="icon" class="mb-4 text-4xl text-primary">
+          <div v-if="icon" class="mb-4 text-4xl text-blue-500">
             <Icon :name="icon" />
           </div>
 
@@ -76,8 +76,7 @@ const cardClass = computed(() => {
           <a
             v-if="cta && link"
             :href="link"
-            class="mt-6 inline-flex items-center gap-2 text-sm font-medium
-                   text-primary"
+            class="mt-6 inline-flex items-center gap-2 text-sm font-medium"
             target="_blank"
             >
             {{ cta }}

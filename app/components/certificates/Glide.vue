@@ -74,7 +74,7 @@ onUnmounted(() => {
 <template>
   <div class="relative overflow-hidden rounded-3xl border border-black/10 dark:border-white/15 bg-white/70 dark:bg-black/10 backdrop-blur-xs p-8 shadow-sm">
     <div
-      class="inline-block mb-8 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-sm font-semibold text-primary"
+      class="inline-block mb-8 rounded-full border border-black/50 dark:border-white/90 px-4 py-2 text-sm font-semibold"
     >
       <a :href="props.links" target="_blank" :class="{ 'hover:underline': props.links }">
         {{ props.title }}
@@ -120,7 +120,7 @@ onUnmounted(() => {
         v-if="certificates.length > 1"
       >
         <button
-          class="rounded-full p-2 w-10 h-10 flex items-center justify-center text-gray-500 transition-colors hover:bg-gray-100 hover:text-primary"
+          class="rounded-full p-2 w-10 h-10 flex items-center justify-center text-gray-500 transition-colors hover:bg-gray-100"
           data-glide-dir="<"
           aria-label="Previous slide"
         >
@@ -132,7 +132,7 @@ onUnmounted(() => {
         </span>
 
         <button
-          class="rounded-full p-2 w-10 h-10 flex items-center justify-center text-gray-500 transition-colors hover:bg-gray-100 hover:text-primary"
+          class="rounded-full p-2 w-10 h-10 flex items-center justify-center text-gray-500 transition-colors hover:bg-gray-100"
           data-glide-dir=">"
           aria-label="Next slide"
         >

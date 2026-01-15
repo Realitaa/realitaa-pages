@@ -14,7 +14,7 @@ const quote = useQuote()
     </blockquote>
     <cite class="not-italic flex flex-col items-center">
       <span class="font-bold text-lg">{{ quote.author }}</span>
-      <span class="text-primary text-sm">{{ quote.role }}</span>
+      <span class="text-sm">{{ quote.role }}</span>
     </cite>
   </SectionWrapper>
 </template>
