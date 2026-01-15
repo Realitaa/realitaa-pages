@@ -1,4 +1,21 @@
 <script setup lang="ts">
+useSeoMeta({
+  title: 'Sertifikat | Reza Mulia Putra',
+  description: 'Sertifikat yang diperoleh Reza Mulia Putra',
+
+  ogTitle: 'Sertifikat | Reza Mulia Putra',
+  ogDescription: 'Sertifikat yang diperoleh Reza Mulia Putra',
+  ogType: 'website',
+  ogImage: 'https://assets.realitaa.dev/img/cover.png',
+  ogUrl: 'https://realitaa.dev/certificates',
+
+  twitterTitle: 'Sertifikat | Reza Mulia Putra',
+  twitterDescription: 'Sertifikat yang diperoleh Reza Mulia Putra',
+  twitterImage: 'https://assets.realitaa.dev/img/cover.png',
+
+  robots: 'index, follow'
+})
+
 const { certificates, status, error } = useCertificates()
 const { locale } = useI18n()
 </script>

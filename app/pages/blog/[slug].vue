@@ -129,12 +129,23 @@ const { data: relatedArticles } = await useAsyncData(
 useSeoMeta({
   title: article.value?.title,
   description: article.value?.description,
+
   ogTitle: article.value?.title,
   ogImage: article.value?.image,
   ogDescription: article.value?.description,
   ogType: 'article',
+  ogUrl: `https://realitaa.dev/blog/${slug.value}`,
+
   articlePublishedTime: article.value?.date,
+  articleModifiedTime: article.value?.date,
+
+  articleAuthor: article.value?.author
+    ? [article.value.author]
+    : undefined,
+
+  articleTag: article.value?.tags,
 })
+
 </script>
 
 <template>

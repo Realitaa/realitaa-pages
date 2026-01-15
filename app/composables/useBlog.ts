@@ -8,6 +8,7 @@ export interface BlogListItem {
   tags: string[]
   image?: string
   draft?: boolean
+  author: string
 }
 
 export interface BlogArticle extends BlogListItem {

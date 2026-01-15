@@ -47,11 +47,20 @@ const getArticleImage = (article: { title: string; image?: string }) => {
 
 // SEO
 useSeoMeta({
-  title: 'Blog',
-  description: 'Read my latest articles on web development, DevOps, and software engineering.',
-  ogTitle: 'Blog',
-  ogDescription: 'Read my latest articles on web development, DevOps, and software engineering.',
+  title: 'Blog | Reza Mulia Putra',
+  description: 'Tutorial dan Wawasan Tentang Web Development, AI/ML, dan Backend.',
+
+  ogTitle: 'Blog | Reza Mulia Putra',
+  ogDescription: 'Tutorial dan Wawasan Tentang Web Development, AI/ML, dan Backend.',
   ogType: 'website',
+  ogImage: 'https://assets.realitaa.dev/img/cover.png',
+  ogUrl: 'https://realitaa.dev/blog',
+
+  twitterTitle: 'Blog | Reza Mulia Putra',
+  twitterDescription: 'Tutorial dan Wawasan Tentang Web Development, AI/ML, dan Backend.',
+  twitterImage: 'https://assets.realitaa.dev/img/cover.png',
+
+  robots: 'index, follow'
 })
 </script>
 

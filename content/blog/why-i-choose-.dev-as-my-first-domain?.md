@@ -9,6 +9,7 @@ tags:
   - developer-journey
   - portfolio
 draft: false
+author: Reza Mulia Putra
 image: https://assets.realitaa.dev/blog/why-i-choose-dot-dev-as-my-first-domain/og/web-ketiga.png
 og:
   title: Kenapa Saya Memilih Domain .dev untuk Website Portfolio Pertama Saya

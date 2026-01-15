@@ -23,5 +23,18 @@ const { data: latestBlog } = await useAsyncData('latest-blog', () => getLatestAr
           />
         </div>
       </div>
+      <div class="flex justify-center mt-4">
+      <NuxtLink
+        to="/blog"
+        class="group p-2 btn btn-primary inline-flex items-center gap-2"
+      >
+        {{ $t('whats_new.section_cta') }}
+        <span
+          class="inline-block transition-transform duration-200 group-hover:translate-x-1"
+        >
+          →
+        </span>
+      </NuxtLink>
+    </div>
   </SectionWrapper>
 </template>

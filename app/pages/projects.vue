@@ -1,4 +1,21 @@
 <script setup lang="ts">
+useSeoMeta({
+  title: 'Proyek | Reza Mulia Putra',
+  description: 'Proyek Open Source yang dipublikasikan oleh Reza Mulia Putra',
+
+  ogTitle: 'Proyek | Reza Mulia Putra',
+  ogDescription: 'Proyek Open Source yang dipublikasikan oleh Reza Mulia Putra',
+  ogType: 'website',
+  ogImage: 'https://assets.realitaa.dev/img/cover.png',
+  ogUrl: 'https://realitaa.dev/projects',
+
+  twitterTitle: 'Proyek | Reza Mulia Putra',
+  twitterDescription: 'Proyek Open Source yang dipublikasikan oleh Reza Mulia Putra',
+  twitterImage: 'https://assets.realitaa.dev/img/cover.png',
+
+  robots: 'index, follow'
+})
+
 const { projects, status, error } = useProjects()
 const { assetsBaseUrl } = useRuntimeConfig().public
 
