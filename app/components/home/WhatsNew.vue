@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const news = useWhatsNew()
+const { getLatestArticles } = useBlog()
+
+const { data: latestBlog } = await useAsyncData('latest-blog', () => getLatestArticles(3))
 </script>
 
 <template>
@@ -8,7 +10,7 @@ const news = useWhatsNew()
       {{ $t('whats_new.subtitle') }}
     </template>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div v-for="(item, index) in news" :key="index">
+        <div v-for="(item, index) in latestBlog" :key="index">
           <Card
             :title="item.title"
             :description="item.description"
@@ -17,6 +19,7 @@ const news = useWhatsNew()
             :link="item.link"
             :floatingEffect="true"
             :glow="true"
+            :truncate="true"
           />
         </div>
       </div>

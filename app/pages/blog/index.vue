@@ -58,7 +58,7 @@ useSeoMeta({
 <template>
   <SectionWrapper title="Blog" containerClass="max-w-6xl">
     <template #description>
-      Thoughts, tutorials, and insights on web development
+      Tutorial dan Wawasan Tentang Web Development, AI/ML, dan Backend.
     </template>
 
     <!-- Search and Filter Section -->
@@ -67,7 +67,7 @@ useSeoMeta({
       <div class="relative">
         <Icon 
           name="mdi:magnify" 
-          class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl" 
+          class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 z-10 text-xl" 
         />
         <input
           v-model="searchQuery"

@@ -160,10 +160,38 @@ export const useBlog = () => {
     return Array.from(tagSet).sort()
   }
 
+  /**
+   * Fetch the latest N blog articles for homepage display.
+   * Returns articles mapped to Card component format.
+   */
+  const getLatestArticles = async (limit: number = 3) => {
+    let query = queryCollection('blog')
+      .select('path', 'title', 'description', 'date', 'tags', 'image', 'draft')
+      .order('date', 'DESC')
+      .limit(limit)
+
+    // In production, exclude drafts
+    if (!isDev) {
+      query = query.where('draft', '<>', true)
+    }
+
+    const articles = await query.all()
+    
+    // Map to Card component format
+    return articles.map((article) => ({
+      title: article.title,
+      description: article.description,
+      image: article.image || '/images/blog-placeholder.webp',
+      cta: 'Read More',
+      link: article.path,
+    }))
+  }
+
   return {
     getAllArticles,
     getArticle,
     getRelatedArticles,
+    getLatestArticles,
     formatDate,
     filterArticles,
     extractTags,
