@@ -14,7 +14,7 @@ const { locale } = useI18n()
       {{ $t('featured_projects.subtitle') }}
     </template>
     
-    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-8 grid-cols-[repeat(auto-fit,minmax(280px,1fr))]">
       <div v-for="(project, index) in featuredProjects" :key="index">
         <Card
           :title="project.title[locale]"
