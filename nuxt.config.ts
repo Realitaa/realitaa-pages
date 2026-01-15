@@ -68,5 +68,9 @@ export default defineNuxtConfig({
       }
     }
   },
+  ssr: true,
+  nitro: {
+    preset: 'cloudflare_pages',
+  },
   compatibilityDate: '2026-01-05',
 })
