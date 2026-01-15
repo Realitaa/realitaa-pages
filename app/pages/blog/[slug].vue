@@ -23,6 +23,7 @@ if (error.value || !article.value) {
   })
 }
 
+
 // Fetch related articles
 const { data: relatedArticles } = await useAsyncData(
   `related-${slug.value}`,
@@ -47,7 +48,6 @@ useSeoMeta({
 
 <template>
   <div class="min-h-[calc(100vh-4rem)] px-4 py-8">
-    <!-- Back Link -->
     <div class="mx-auto mb-6 max-w-7xl">
       <NuxtLink 
         to="/blog" 
@@ -58,14 +58,11 @@ useSeoMeta({
       </NuxtLink>
     </div>
 
-    <!-- Main Card Wrapper -->
     <div class="mx-auto max-w-7xl">
       <Card>
-        <div class="flex h-[calc(100vh-12rem)] flex-col lg:flex-row">
-          <!-- Left: Scrollable Content Area -->
-          <div class="flex-1 overflow-y-auto lg:border-r lg:border-black/10 lg:dark:border-white/10">
+        <div class="flex flex-col lg:flex-row">
+          <div class="flex-1 lg:border-r lg:border-black/10 lg:dark:border-white/10">
             <div class="p-6 lg:p-8">
-              <!-- Article Header -->
               <header class="mb-8 border-b border-black/10 pb-8 dark:border-white/10">
                 <div class="mb-4 flex items-center gap-3">
                   <time 
@@ -101,49 +98,29 @@ useSeoMeta({
                 </div>
               </header>
 
-              <!-- Article Content -->
               <UApp>
-                <article>
-                  <ContentRenderer :value="article" />
-                </article>
+                <div class="mx-auto flex max-w-7xl gap-12">
+                  <article class="w-full max-w-prose">
+                    <ContentRenderer :value="article" />
+                  </article>
+
+                  <aside
+                    class="hidden shrink-0 lg:block self-start"
+                  >
+                    <div class="sticky top-8">
+                      <UContentToc
+                        :links="article?.body?.toc?.links"
+                        title="Daftar Isi"
+                        highlight highlight-color="primary"
+                      />
+                    </div>
+                  </aside>
+                </div>
               </UApp>
             </div>
           </div>
-
-          <!-- Right: Sticky Table of Contents (Desktop Only) -->
-          <aside 
-            v-if="showToc" 
-            class="hidden w-64 shrink-0 lg:block"
-          >
-            <div class="sticky top-0 p-6">
-              <h4 class="mb-4 text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-white/50">
-                On this page
-              </h4>
-              <nav>
-                <ul class="space-y-2">
-                  <li 
-                    v-for="item in article?.toc" 
-                    :key="item.id"
-                    :class="[
-                      'text-sm transition-colors',
-                      item.depth === 3 ? 'pl-4' : '',
-                      item.depth === 4 ? 'pl-8' : ''
-                    ]"
-                  >
-                    <a 
-                      :href="`#${item.id}`"
-                      class="block text-gray-500 hover:text-primary dark:text-white/50 dark:hover:text-primary"
-                    >
-                      {{ item.text }}
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </aside>
         </div>
 
-        <!-- Bottom: Related Articles -->
         <div 
           v-if="relatedArticles && relatedArticles.length > 0" 
           class="border-t border-black/10 p-6 dark:border-white/10 lg:p-8"

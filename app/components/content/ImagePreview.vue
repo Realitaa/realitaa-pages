@@ -10,7 +10,7 @@ defineProps<{
   <Image
     :src="src"
     :alt="alt"
-    imageClass="aspect-video w-full object-cover"
+    imageClass="w-full h-auto"
     preview
   />
 
