@@ -26,7 +26,7 @@ const { locale } = useI18n()
 
     <!-- Data -->
     <div v-else class="mx-auto flex max-w-6xl flex-col gap-12">
-      <Card v-for="(project, index) in projects" :key="index" :title="project.title[locale]">
+      <Card v-for="(project, index) in projects" :key="index" :title="project.title[locale]" :glow="true">
         <!-- Custom 70/30 Layout -->
         <div class="flex flex-col md:flex-row">
           <!-- DESKTOP LEFT (70%) / MOBILE BOTTOM Content -->

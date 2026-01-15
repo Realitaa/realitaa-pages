@@ -23,6 +23,8 @@ const { locale } = useI18n()
           :cta="$t('featured_projects.cta')" 
           :link="project.link"
           :truncate="true"
+          :floatingEffect="true"
+          :glow="true"
         />
       </div>
     </div>

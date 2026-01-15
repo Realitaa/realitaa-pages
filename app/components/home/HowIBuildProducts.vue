@@ -10,6 +10,8 @@ const items = useHowIBuildProducts()
           :title="$t('how_i_build_products.card' + (index + 1) + '.title')"
           :description="$t('how_i_build_products.card' + (index + 1) + '.body')"
           :icon="item.icon"
+          :floatingEffect="true"
+          :glow="true"
         />
       </div>
     </div>

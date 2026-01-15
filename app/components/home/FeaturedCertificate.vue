@@ -34,6 +34,8 @@ const { locale } = useI18n()
           :link="cert.link"
           :truncate="true"
           class="md:max-w-md"
+          :floatingEffect="true"
+          :glow="true"
         />
       </div>
     </div>

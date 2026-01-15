@@ -114,7 +114,7 @@ useSeoMeta({
         :to="article.path"
         class="block"
       >
-        <Card>
+        <Card :floatingEffect="true" :glow="true">
           <!-- Article Image -->
           <div class="relative h-48 w-full overflow-hidden">
             <NuxtImg

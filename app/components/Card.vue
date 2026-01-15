@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   title?: string
   description?: string
   icon?: string
@@ -7,7 +7,16 @@ defineProps<{
   cta?: string
   link?: string
   truncate?: boolean
+  glow?: boolean
+  floatingEffect?: boolean
 }>()
+
+const cardClass = computed(() => {
+  return {
+    'hover:-translate-y-2': props.floatingEffect,
+    'hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.25)] dark:hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.25)]': props.glow,
+  }
+})
 </script>
 
 <template>
@@ -16,17 +25,16 @@ defineProps<{
            border border-black/10 dark:border-white/15
            bg-white/70 dark:bg-black/10
            backdrop-blur-xs
-           transition-all duration-300
-           hover:-translate-y-2
-           hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.25)]
-           dark:hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.25)]">
+           transition-all duration-300"
+    :class="cardClass">
 
     <!-- Glow accent (dark mode only) -->
     <div
       class="pointer-events-none absolute inset-0 rounded-3xl
              opacity-0 transition-opacity duration-300
              dark:group-hover:opacity-100
-             bg-linear-to-br from-primary/20 via-transparent to-transparent blur-xl">
+             bg-linear-to-br from-primary/20 via-transparent to-transparent blur-xl"
+      v-if="glow">
     </div>
 
     <!-- Image -->

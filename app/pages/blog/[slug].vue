@@ -48,7 +48,7 @@ useSeoMeta({
 <template>
   <div class="min-h-[calc(100vh-4rem)] px-4 py-8">
     <!-- Back Link -->
-    <div class="mx-auto mb-6 max-w-6xl">
+    <div class="mx-auto mb-6 max-w-7xl">
       <NuxtLink 
         to="/blog" 
         class="inline-flex items-center gap-2 text-sm text-gray-500 transition-colors hover:text-primary dark:text-white/50 dark:hover:text-primary"
@@ -59,7 +59,7 @@ useSeoMeta({
     </div>
 
     <!-- Main Card Wrapper -->
-    <div class="mx-auto max-w-6xl">
+    <div class="mx-auto max-w-7xl">
       <Card>
         <div class="flex h-[calc(100vh-12rem)] flex-col lg:flex-row">
           <!-- Left: Scrollable Content Area -->

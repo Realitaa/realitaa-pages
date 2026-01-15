@@ -15,6 +15,8 @@ const news = useWhatsNew()
             :image="item.image"
             :cta="item.cta"
             :link="item.link"
+            :floatingEffect="true"
+            :glow="true"
           />
         </div>
       </div>
