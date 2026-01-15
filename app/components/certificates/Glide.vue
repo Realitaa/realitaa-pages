@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import Glide from '@glidejs/glide'
-import { Images } from '@glidejs/glide/dist/glide.modular.esm'
-import { ref, onMounted, onUnmounted } from 'vue'
 
-const glideRef = ref(null)
-let glide = null
+const glideRef = ref<HTMLElement | null>(null)
+let glide: Glide | null = null
+
 const { assetsBaseUrl } = useRuntimeConfig().public
 const { locale } = useI18n()
 
@@ -13,63 +12,53 @@ const imageUrl = (img: string | Record<string, string>) => {
   return `${assetsBaseUrl}/certificates/${imagePath}`
 }
 
-const props = defineProps({
-  title: {
-    type: String,
-    required: true,
-  },
-  links: {
-    type: String,
-    required: false,
-  },
-  certificates: {
-    type: Array,
-    required: true,
-  }
-})
+const props = defineProps<{
+  title: string
+  links?: string
+  certificates: Array<any>
+}>()
 
-let activeCertificate = ref(props.certificates[0])
+const activeCertificate = ref(props.certificates[0])
 
-// Fungsi untuk berpindah ke slide yang diklik
-const goToSlide = (index, link) => {
-  if (index === activeCertificate.value.id - 1) {
-    // Redirect ke anchor jika slide aktif
+const goToSlide = (index: number, link?: string) => {
+  if (!glide) return
+
+  if (index === activeCertificate.value.id - 1 && link) {
     window.open(link, '_blank')
   } else {
-    // Pindah ke slide yang diklik
     glide.go(`=${index}`)
   }
 }
 
 onMounted(() => {
-  if (glideRef.value) {
-    glide = new Glide(glideRef.value, {
-      type: 'slider',
-      startAt: 0,
-      perView: 2,
-      focusAt: 'center',
-      gap: 24,
-      breakpoints: {
-        768: {
-          perView: 1,
-        },
+  if (!glideRef.value) return
+
+  glide = new Glide(glideRef.value, {
+    type: 'slider',
+    startAt: 0,
+    perView: 2,
+    focusAt: 'center',
+    gap: 24,
+    breakpoints: {
+      768: {
+        perView: 1,
       },
-    })
+    },
+  })
 
-    glide.on(['mount.after', 'run'], function () {
-      activeCertificate.value = props.certificates[glide.index]
-    })
+  glide.on(['mount.after', 'run'], () => {
+    activeCertificate.value = props.certificates[glide!.index]
+  })
 
-    glide.mount({ Images })
-  }
+  glide.mount()
 })
 
 onUnmounted(() => {
-  if (glide) {
-    glide.destroy()
-  }
+  glide?.destroy()
+  glide = null
 })
 </script>
+
 
 <template>
   <div class="relative overflow-hidden rounded-3xl border border-black/10 dark:border-white/15 bg-white/70 dark:bg-black/10 backdrop-blur-xs p-8 shadow-sm">
