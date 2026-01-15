@@ -1,6 +1,6 @@
 ---
 title: Kenapa Saya Memilih .dev untuk Website Portfolio Pertama Saya
-description: Cerita di balik website portfolio pertama saya, filosofi memilih domain .dev, dan bagaimana saya mendapatkan domain gratis sebagai developer pemula.
+description: Cerita di balik website portfolio pertama saya, filosofi memilih domain .dev, dan bagaimana saya mendapatkan domain gratis sebagai mahasiswa.
 date: 2026-01-15
 tags:
   - web-development
@@ -12,14 +12,14 @@ draft: false
 image: https://assets.realitaa.dev/blog/why-i-choose-dot-dev-as-my-first-domain/og/web-ketiga.png
 og:
   title: Kenapa Saya Memilih Domain .dev untuk Website Portfolio Pertama Saya
-  description: Cerita di balik website portfolio pertama saya, filosofi memilih domain .dev, dan bagaimana saya mendapatkan domain gratis sebagai developer pemula.
+  description: Cerita di balik website portfolio pertama saya, filosofi memilih domain .dev, dan bagaimana saya mendapatkan domain gratis sebagai mahasiswa.
   type: article
   image: https://assets.realitaa.dev/blog/why-i-choose-dot-dev-as-my-first-domain/og/web-ketiga.png
 ---
 
 ## Awal yang Sederhana
 
-Halo semuanya, ini adalah blog pertama saya di website personal saya yang baru. Saya akan bercerita tentang sejarah website saya dan bagaimana cara mendapatkan domain dengan gratis.
+Halo semuanya, ini adalah blog pertama saya di website personal saya yang baru. Saya akan bercerita tentang sejarah website saya dan bagaimana cara mendapatkan domain dengan gratis sebagai mahasiswa.
 
 Membangun personal website adalah hal yang sudah beberapa kali saya lakukan. Saya masih ingat ketika pertama kali membuat personal website, hanya menggunakan teknologi sederhana seperti HTML dan Bootstrap 5, kemudian di hosting di GitHub Pages. Desainnya sederhana dan tidak ada fitur yang kompleks. Sayangnya saya tidak lagi memiliki source code nya.
 
@@ -69,7 +69,7 @@ Mirip sekali kan? Itu lah alasan saya memilih Vue sebagai frontend framework yan
 
 Website portfolio kedua saya dibuat menggunakan teknologi Vue 3 dan TailwindCSS. Pembuatan ulang ini sebenarnya merupakan salah satu cara saya memfamiliarkan diri dengan framework Vue yang sudah saya pelajari.
 
-Website kedua saya memiliki beberapa keluhan karena load yang lambat dan berjalan lambat di beberapa perangkat lawas. Wajar saja, saya memuat 3d grafis di hero section 😂.
+Website kedua saya memiliki beberapa keluhan seperti load yang lambat dan berjalan lambat di beberapa perangkat lawas. Wajar saja, saya memuat 3d grafis di hero section 😂.
 
 ::image-preview{src="https://assets.realitaa.dev/blog/why-i-choose-dot-dev-as-my-first-domain/web-kedua.png" alt="Screenshot web portfolio kedua saya" caption="Hero Section pada Web Portfolio Kedua Saya"}
 ::
@@ -83,6 +83,8 @@ Lalu disinilah kita, website portfolio ketiga saya, dibuat menggunakan [Nuxt 4](
 
 Adapun tujuan penggunaan Nuxt 4 adalah untuk meningkatkan performa dan SEO dengan menggunakan teknologi seperti [Server Side Rendering](https://developer.mozilla.org/en-US/docs/Glossary/SSR) atau [Static Site Generation](https://developer.mozilla.org/en-US/docs/Glossary/SSG). Nuxt juga memiliki fitur dan ekosistem yang luas, seperti [Nuxt Content](https://content.nuxt.com) yang memudahkan pembuatan blog.
 
+By the way, website ini terinspirasi dari [Kanish](https://kanishv.netlify.app/).
+
 Saya harap dengan website ini, bisa menjadi portfolio yang relevan dan bisa memberikan manfaat bagi orang lain.
 
 ## Mengapa Memilih .dev Sebagai Domain Pertama Saya?
@@ -92,6 +94,9 @@ Pada awalnya saya ingin menggunakan domain yang lebih terkenal seperti `.com`. T
 > “Saya adalah developer, dan saya sedang berkembang.”
 
 ## Apa itu Domain, Subdomain dan Hosting?
+
+::image-preview{src="https://www.ionos.co.uk/digitalguide/fileadmin/_processed_/3/a/csm_structure-of-an-inclusive-subdomain_92dda1c78b.webp" alt="Structure of an Inclusive Subdomain" caption="Struktur dari Domain (Sumber: ionos.co.uk)"}
+::
 
 Domain adalah alamat unik yang digunakan untuk mengakses sebuah website. Contohnya adalah `google.com`. Domain ini terdiri dari dua bagian, yaitu nama domain (`google`) dan ekstensi domain (`.com`).
 
