@@ -1,4 +1,4 @@
-import { onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted, watch, toValue, type MaybeRef } from 'vue'
 
 interface Star {
   x: number
@@ -11,10 +11,10 @@ interface Star {
 }
 
 interface StarfieldConfig {
-  density?: number        // 1 – 5 (default 3)
-  speed?: number          // default 1
-  trailAlpha?: number     // 0.05 – 0.3
-  safeRadius?: number     // px, pusat layar
+  density?: MaybeRef<number>  // 1 – 5 (default 3), can be reactive
+  speed?: number              // default 1
+  trailAlpha?: number         // 0.05 – 0.3
+  safeRadius?: number         // px, pusat layar
 }
 
 export function useStarfieldBackground(
@@ -26,7 +26,7 @@ export function useStarfieldBackground(
   let rafId: number | null = null
   let stars: Star[] = []
 
-  const density = Math.min(Math.max(config.density ?? 3, 1), 5)
+  const getDensity = () => Math.min(Math.max(toValue(config.density) ?? 3, 0.1), 5)
   const speedFactor = config.speed ?? 1
   const trailAlpha = config.trailAlpha ?? 0.15
 
@@ -107,6 +107,18 @@ export function useStarfieldBackground(
     rafId = requestAnimationFrame(animate)
   }
 
+  function initStars() {
+    if (!canvas) return
+    const density = getDensity()
+    const starCount = Math.floor((canvas.width * canvas.height) / 10000) * density
+    stars = Array.from({ length: starCount }, () =>
+      createStar(
+        canvas!.width / devicePixelRatio,
+        canvas!.height / devicePixelRatio
+      )
+    )
+  }
+
   onMounted(() => {
     if (!host.value) return
 
@@ -119,19 +131,19 @@ export function useStarfieldBackground(
     ctx = canvas.getContext('2d')
 
     resize()
-
-    const starCount =
-      Math.floor((canvas.width * canvas.height) / 10000) * density
-
-    stars = Array.from({ length: starCount }, () =>
-      createStar(
-        canvas!.width / devicePixelRatio,
-        canvas!.height / devicePixelRatio
-      )
-    )
+    initStars()
 
     window.addEventListener('resize', resize)
     rafId = requestAnimationFrame(animate)
+  })
+
+  // Watch for density changes (reactive breakpoints)
+  watch(() => toValue(config.density), () => {
+    if (canvas && ctx) {
+      // Clear existing stars and reinitialize with new density
+      ctx.clearRect(0, 0, canvas.width / devicePixelRatio, canvas.height / devicePixelRatio)
+      initStars()
+    }
   })
 
   onUnmounted(() => {

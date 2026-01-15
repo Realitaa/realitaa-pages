@@ -30,8 +30,25 @@ import { useStarfieldBackground } from '../composables/useStarfieldBackground'
 
 const host = ref<HTMLElement | null>(null)
 
+// Responsive density based on screen width
+const windowWidth = ref(typeof window !== 'undefined' ? window.innerWidth : 1024)
+
+onMounted(() => {
+  windowWidth.value = window.innerWidth
+  window.addEventListener('resize', () => {
+    windowWidth.value = window.innerWidth
+  })
+})
+
+const responsiveDensity = computed(() => {
+  if (windowWidth.value >= 1920) return 1      // Ultrawide
+  if (windowWidth.value >= 1024) return 0.7    // Desktop
+  if (windowWidth.value >= 768) return 0.4     // Tablet
+  return 0.2                                    // Mobile
+})
+
 useStarfieldBackground(host, {
-  density: 1,
+  density: responsiveDensity,
   speed: 1,
   trailAlpha: 0.18,
   safeRadius: 160
