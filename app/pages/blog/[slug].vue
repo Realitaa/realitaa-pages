@@ -1,6 +1,102 @@
 <script setup lang="ts">
 const route = useRoute()
 const { getArticle, getRelatedArticles, formatDate } = useBlog()
+const tocInlineRef = ref<HTMLElement | null>(null)
+const showFloatingToc = ref(false)
+const floatingStyle = ref<Record<string, string>>({})
+const tocKey = ref(0)
+const activeHeading = ref<string | null>(null)
+const isTocOpen = ref(false)
+
+onMounted(() => {
+  if (!tocInlineRef.value) return
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      // Jika ToC inline sudah TIDAK terlihat → tampilkan fixed ToC
+      showFloatingToc.value = !entry.isIntersecting
+    },
+    {
+      root: null, // viewport
+      threshold: 0,
+    }
+  )
+
+  const updatePosition = () => {
+    const rect = tocInlineRef.value!.getBoundingClientRect()
+
+    floatingStyle.value = {
+      left: `${rect.left}px`,
+      width: `${rect.width}px`,
+    }
+  }
+
+  updatePosition()
+  window.addEventListener('resize', updatePosition)
+
+  observer.observe(tocInlineRef.value)
+
+  onUnmounted(() => {
+    observer.disconnect()
+    window.removeEventListener('resize', updatePosition)
+  })
+})
+
+onMounted(() => {
+  const headings = document.querySelectorAll(
+    'article h2, article h3, article h4'
+  )
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
+
+      if (visible.length > 0) {
+        activeHeading.value = visible[0].target.id
+      }
+    },
+    {
+      rootMargin: '-30% 0px -60% 0px',
+      threshold: 0
+    }
+  )
+
+  headings.forEach(h => observer.observe(h))
+})
+
+function onTocClick(e: MouseEvent) {
+  const target = e.target as HTMLElement
+  const link = target.closest('a[href^="#"]') as HTMLAnchorElement | null
+
+  if (!link) return
+
+  e.preventDefault()
+
+  const id = link.getAttribute('href')?.slice(1)
+  if (!id) return
+
+  // 1. Tutup drawer
+  isTocOpen.value = false
+
+  // 2. Tunggu drawer benar-benar tertutup
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      const el = document.getElementById(id)
+      if (!el) return
+
+      el.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
+
+      // Optional: update URL hash
+      history.pushState(null, '', `#${id}`)
+    }, 200) // sesuaikan dengan durasi animasi drawer
+  })
+}
+
 
 // Get slug from route params
 const slug = computed(() => {
@@ -23,23 +119,18 @@ if (error.value || !article.value) {
   })
 }
 
-
 // Fetch related articles
 const { data: relatedArticles } = await useAsyncData(
   `related-${slug.value}`,
   () => getRelatedArticles(article.value?.tags || [], article.value?.path || '')
 )
 
-// Check if ToC should be displayed (at least 2 headings)
-const showToc = computed(() => {
-  return article.value?.toc && article.value.toc.length >= 2
-})
-
 // SEO
 useSeoMeta({
   title: article.value?.title,
   description: article.value?.description,
   ogTitle: article.value?.title,
+  ogImage: article.value?.image,
   ogDescription: article.value?.description,
   ogType: 'article',
   articlePublishedTime: article.value?.date,
@@ -48,7 +139,7 @@ useSeoMeta({
 
 <template>
   <div class="min-h-[calc(100vh-4rem)] px-4 py-8">
-    <div class="mx-auto mb-6 max-w-7xl">
+    <div class="mx-auto mb-6 max-w-6xl">
       <NuxtLink 
         to="/blog" 
         class="inline-flex items-center gap-2 text-sm text-gray-500 transition-colors hover:text-primary dark:text-white/50 dark:hover:text-primary"
@@ -58,7 +149,7 @@ useSeoMeta({
       </NuxtLink>
     </div>
 
-    <div class="mx-auto max-w-7xl">
+    <div class="mx-auto max-w-6xl">
       <Card>
         <div class="flex flex-col lg:flex-row">
           <div class="flex-1 lg:border-r lg:border-black/10 lg:dark:border-white/10">
@@ -104,16 +195,18 @@ useSeoMeta({
                     <ContentRenderer :value="article" />
                   </article>
 
+                  <!-- TOC INLINE -->
                   <aside
+                    ref="tocInlineRef"
                     class="hidden shrink-0 lg:block self-start"
                   >
-                    <div class="sticky top-8">
-                      <UContentToc
-                        :links="article?.body?.toc?.links"
-                        title="Daftar Isi"
-                        highlight highlight-color="primary"
-                      />
-                    </div>
+                    <UContentToc
+                      :key="`inline-${tocKey}`"
+                      :links="article?.body?.toc?.links"
+                      title="Daftar Isi"
+                      :active-id="activeHeading"
+                      trailingIcon="lineicons:folder"
+                    />
                   </aside>
                 </div>
               </UApp>
@@ -157,6 +250,58 @@ useSeoMeta({
           </div>
         </div>
       </Card>
+
+    <!-- FLOATING TOC -->
+    <Transition
+      enter-active-class="transition ease-out duration-200"
+      enter-from-class="opacity-0 translate-y-2"
+      enter-to-class="opacity-100 translate-y-0"
+      leave-active-class="transition ease-in duration-150"
+      leave-from-class="opacity-100 translate-y-0"
+      leave-to-class="opacity-0 translate-y-2"
+    >
+      <div  
+        v-show="showFloatingToc"
+        class="fixed top-20 z-50 hidden lg:block"
+        :style="floatingStyle"
+      >
+        <UContentToc
+          :active-id="activeHeading"
+          :links="article?.body?.toc?.links"
+          title="Daftar Isi"
+          trailingIcon="lineicons:folder"
+        />
+      </div>
+    </Transition>
+
     </div>
+    <UDrawer v-model:open="isTocOpen" direction="right">
+      <!-- Trigger -->
+      <UButton
+        color="neutral"
+        variant="soft"
+        class="fixed right-0 top-1/2 -translate-y-1/2 z-40 h-14 w-15 rounded-l-xl shadow-md lg:hidden"
+        aria-label="Open Table of Contents"
+        @click="isTocOpen = true"
+      >
+        <UIcon name="i-lucide-chevron-left" class="text-lg" />
+        <UIcon name="lineicons:list" class="text-lg" />
+      </UButton>
+
+      <!-- Drawer Content -->
+      <template #content>
+        <div class="w-72 p-4">
+          <!-- Custom ToC wrapper -->
+          <UContentToc
+            :active-id="activeHeading"
+            :links="article?.body?.toc?.links"
+            title="Daftar Isi"
+            @click="onTocClick"
+            :open="true"
+            trailingIcon="lineicons:folder"
+          />
+        </div>
+      </template>
+    </UDrawer>
   </div>
 </template>
