@@ -76,8 +76,8 @@ onUnmounted(() => {
             <!-- Aspect Ratio Container -->
             <div class="relative w-full overflow-hidden bg-gray-100 dark:bg-gray-800">
                <img
-                :src="imageUrl(`certificates/${certificate.image}`, 'preview')"
-                :alt="certificate.title[locale]"
+                :src="imageUrl(`certificates/${certificate.image[locale] || certificate.image}`, 'preview')"
+                :alt="certificate.title"
                 class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
               />
