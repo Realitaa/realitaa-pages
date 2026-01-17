@@ -1,8 +1,6 @@
 import tailwindcss from "@tailwindcss/vite";
 import Aura from '@primeuix/themes/aura';
 
-const envBool = (value?: string) => value === 'true'
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -42,7 +40,10 @@ export default defineNuxtConfig({
     fallback: 'dark',
   },
   image: {
-    domains: ['assets.realitaa.dev']
+    domains: ['assets.realitaa.dev'],
+    alias: {
+      cf: 'https://assets.realitaa.dev'
+    }
   },
   primevue: {
     autoImport: false,
