@@ -17,11 +17,6 @@ useSeoMeta({
 })
 
 const { projects, status, error } = useProjects()
-const { assetsBaseUrl } = useRuntimeConfig().public
-
-const imageUrl = (img: string) =>
-  `${assetsBaseUrl}/projects/${img}`
-
 const { locale } = useI18n()
 </script>
 
@@ -94,16 +89,14 @@ const { locale } = useI18n()
           <!-- DESKTOP RIGHT (30%) / MOBILE TOP Media -->
           <div class="bg-black/5 p-8 dark:bg-white/5 md:w-[30%] md:order-2 order-1 border-b md:border-b-0 md:border-l border-black/10 dark:border-white/10">
             <!-- Project Images -->
-            <div class="mb-6 overflow-hidden rounded-xl shadow-lg transition-transform hover:scale-[1.02]">
-              <Image
-                  v-for="(img, i) in project.images"
-                  :key="i"
-                  :src="imageUrl(img)"
-                  :alt="project.title"
-                  imageClass="aspect-video w-full object-cover"
-                  preview
-              />
-            </div>
+            <PrimeVueImage
+              v-for="(img, i) in project.images"
+              :key="i"
+              :img="imageUrl(`projects/${img}`, 'thumb')"
+              :originalImg="imageUrl(`projects/${img}`, 'original')"
+              :alt="project.title"
+              class="mb-6 overflow-hidden rounded-xl shadow-lg transition-transform hover:scale-[1.02]"
+            />
 
             <!-- Tech Stack (Desktop Position) -->
             <div class="hidden md:block">

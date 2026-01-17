@@ -43,6 +43,7 @@ const cardClass = computed(() => {
         :src="image"
         :alt="title"
         class="h-48 w-full object-cover"
+        loading="lazy"
       />
       <!-- image overlay -->
       <div class="absolute inset-0 bg-linear-to-t from-black/30 to-transparent"></div>

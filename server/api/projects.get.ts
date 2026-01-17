@@ -2,7 +2,7 @@ export default defineEventHandler(async () => {
   const { assetsBaseUrl } = useRuntimeConfig().public
 
   const projects = await $fetch(
-    `${assetsBaseUrl}/projects/projects.json`
+    `${assetsBaseUrl}/projects.json`
   )
 
   const featured = projects

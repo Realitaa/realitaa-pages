@@ -1,10 +1,5 @@
 <script setup lang="ts">
 const { featuredCertificates } = useCertificates()
-const { assetsBaseUrl } = useRuntimeConfig().public
-
-const imageUrl = (img: string) =>
-  `${assetsBaseUrl}/certificates/${img}`
-
 const { locale } = useI18n()
 </script>
 
@@ -29,7 +24,7 @@ const { locale } = useI18n()
         <Card
           :title="cert.title[locale]"
           :description="cert.description[locale]"
-          :image="imageUrl(cert.image)"
+          :image="imageUrl(`certificates/${cert.image}`, 'preview')"
           :cta="$t('featured_certificates.cta')"
           :link="cert.link"
           :truncate="true"

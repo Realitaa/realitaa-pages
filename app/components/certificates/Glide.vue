@@ -4,13 +4,7 @@ import Glide from '@glidejs/glide'
 const glideRef = ref<HTMLElement | null>(null)
 let glide: Glide | null = null
 
-const { assetsBaseUrl } = useRuntimeConfig().public
 const { locale } = useI18n()
-
-const imageUrl = (img: string | Record<string, string>) => {
-  const imagePath = typeof img === 'string' ? img : img[locale.value]
-  return `${assetsBaseUrl}/certificates/${imagePath}`
-}
 
 const props = defineProps<{
   title: string
@@ -82,9 +76,10 @@ onUnmounted(() => {
             <!-- Aspect Ratio Container -->
             <div class="relative w-full overflow-hidden bg-gray-100 dark:bg-gray-800">
                <img
-                :src="imageUrl(certificate.image)"
+                :src="imageUrl(`certificates/${certificate.image}`, 'preview')"
                 :alt="certificate.title[locale]"
                 class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
               />
               <!-- Overlay -->
               <div class="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/20"></div>
@@ -93,8 +88,9 @@ onUnmounted(() => {
                <div
                 class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100"
               >
-                  <span class="rounded-full bg-white/90 px-4 py-2 text-sm font-bold text-gray-900 shadow-lg backdrop-blur-sm">
+                  <span class="rounded-full flex items-center gap-2 bg-white/90 px-4 py-2 text-sm font-bold text-gray-900 shadow-lg backdrop-blur-sm">
                     {{ $t('certificates.cta') }}
+                    <Icon name="mingcute:arrow-right-up-line" />
                   </span>
               </div>
             </div>

@@ -1,10 +1,5 @@
 <script setup lang="ts">
 const { featuredProjects } = useProjects()
-const { assetsBaseUrl } = useRuntimeConfig().public
-
-const imageUrl = (img: string) =>
-  `${assetsBaseUrl}/projects/${img}`
-
 const { locale } = useI18n()
 </script>
 
@@ -19,7 +14,7 @@ const { locale } = useI18n()
         <Card
           :title="project.title[locale]"
           :description="project.description[locale]"
-          :image="imageUrl(project.image)"
+          :image="imageUrl(`projects/${project.image}`, 'preview')"
           :cta="$t('featured_projects.cta')" 
           :link="project.link"
           :truncate="true"

@@ -19,7 +19,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       assetsBaseUrl:
-        process.env.NUXT_PUBLIC_ASSETS_BASE_URL || 'https://assets.realitaa.dev'
+        process.env.NUXT_PUBLIC_ASSETS_BASE_URL || 'https://assets.realitaa.dev/'
     }
   },
   css: ['./app/assets/css/main.css'],
@@ -38,12 +38,6 @@ export default defineNuxtConfig({
     storageKey: 'theme',
     preference: 'system',
     fallback: 'dark',
-  },
-  image: {
-    domains: ['assets.realitaa.dev'],
-    alias: {
-      cf: 'https://assets.realitaa.dev'
-    }
   },
   primevue: {
     autoImport: false,
