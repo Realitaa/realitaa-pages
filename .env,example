@@ -1,1 +1,5 @@
 NUXT_PUBLIC_ASSETS_BASE_URL=http://localhost:3000
+R2_ACCOUNT_ID=xxxx
+R2_ACCESS_KEY=xxxx
+R2_SECRET_KEY=xxxx
+R2_BUCKET=assets

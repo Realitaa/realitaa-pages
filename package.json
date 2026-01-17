@@ -31,6 +31,7 @@
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
+    "@aws-sdk/client-s3": "^3.971.0",
     "@iconify-json/carbon": "^1.2.18",
     "@iconify-json/material-icon-theme": "^1.2.48",
     "@iconify-json/mdi": "^1.2.3",
@@ -41,6 +42,7 @@
     "@iconify-json/simple-line-icons": "^1.2.1",
     "@iconify-json/skill-icons": "^1.2.3",
     "@primevue/nuxt-module": "^4.5.4",
+    "dotenv": "^17.2.3",
     "eslint-config-prettier": "^10.1.8",
     "fast-glob": "^3.3.3",
     "prettier": "^3.7.4",
