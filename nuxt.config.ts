@@ -21,6 +21,17 @@ export default defineNuxtConfig({
         process.env.NUXT_PUBLIC_ASSETS_BASE_URL || 'https://assets.realitaa.dev/'
     }
   },
+  app: {
+    head: {
+      title: 'Realitaa',
+      htmlAttrs: {
+        lang: 'id',
+      },
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/elaina-witch-hat.ico' },
+      ],
+    },
+  },
   css: ['./app/assets/css/main.css'],
   vite: {
     plugins: [

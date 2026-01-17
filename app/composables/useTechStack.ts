@@ -180,7 +180,7 @@ export const useTechStack = () => {
       "Colab": {
         label: "Colab",
         noIcon: true,
-        source: "https://assets.realitaa.dev/img/colab.png",
+        source: "https://assets.realitaa.dev/original/web/colab.png",
         description: "Start from Colab 1.x",
         link: "https://colab.research.google.com"
       }
