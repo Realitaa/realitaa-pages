@@ -9,7 +9,9 @@
     "preview": "nuxt preview",
     "lint": "eslint --ext .js,.vue,.ts app/",
     "format": "prettier --write .",
-    "transform:images": "node scripts/images.mjs"
+    "transform:images": "node scripts/images.mjs",
+    "upload:r2": "node scripts/upload-r2.mjs",
+    "deploy": "node scripts/deploy.mjs"
   },
   "dependencies": {
     "@glidejs/glide": "^3.7.1",
