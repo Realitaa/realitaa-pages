@@ -96,7 +96,7 @@ Pada awalnya saya ingin menggunakan domain yang lebih terkenal seperti `.com`. T
 
 ## Apa itu Domain, Subdomain dan Hosting?
 
-::image-preview{src="https://www.ionos.co.uk/digitalguide/fileadmin/_processed_/3/a/csm_structure-of-an-inclusive-subdomain_92dda1c78b.webp" alt="Structure of an Inclusive Subdomain" caption="Struktur dari Domain (Sumber: ionos.co.uk)" variant="external}
+::image-preview{src="https://www.ionos.co.uk/digitalguide/fileadmin/_processed_/3/a/csm_structure-of-an-inclusive-subdomain_92dda1c78b.webp" alt="Structure of an Inclusive Subdomain" caption="Struktur dari Domain (Sumber: ionos.co.uk)" variant="external"}
 ::
 
 Domain adalah alamat unik yang digunakan untuk mengakses sebuah website. Contohnya adalah `google.com`. Domain ini terdiri dari dua bagian, yaitu nama domain (`google`) dan ekstensi domain (`.com`).
