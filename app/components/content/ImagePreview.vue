@@ -1,18 +1,23 @@
 <script setup lang="ts">
 type ImageVariant = 'original' | 'preview' | 'thumb' | 'external'
 
-defineProps<{
+const props = defineProps<{
   src: string
   alt: string
   caption?: string
   variant?: ImageVariant
 }>()
+
+const imgSrc = () => {
+  if (props.variant === 'external') return props.src
+  return `blog/${props.src}`
+}
 </script>
 
 <template>
   <PrimeVueImage
-    :img="imageUrl(`blog/${src}`, variant)"
-    :originalImg="imageUrl(`blog/${src}`, variant === 'external' ? 'external' : 'original')"
+    :img="imageUrl(imgSrc(), variant)"
+    :originalImg="imageUrl(imgSrc(), variant === 'external' ? 'external' : 'original')"
     :alt="alt"
     imgClass="w-full h-auto"
   />
