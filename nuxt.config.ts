@@ -80,6 +80,11 @@ export default defineNuxtConfig({
   ssr: true,
   nitro: {
     preset: 'cloudflare_pages',
+    prerender: {
+      crawlLinks: true,
+      routes: ['/blog', '/blog/**'],
+      failOnError: false
+    }
   },
   compatibilityDate: '2026-01-05',
 })
