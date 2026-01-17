@@ -4,13 +4,14 @@ const props = defineProps<{
   originalImg: string
   alt: string
   class?: string
+  imgClass?: string
 }>()
 </script>
 
 <template>
   <div :class="props.class">
     <Image
-      imageClass="aspect-video w-full object-cover"
+      :imageClass="props.imgClass || 'aspect-video w-full object-cover'"
       :src="props.img"
       :alt="props.alt"
       preview

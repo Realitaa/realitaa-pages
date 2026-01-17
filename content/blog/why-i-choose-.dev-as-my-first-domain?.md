@@ -72,14 +72,14 @@ Website portfolio kedua saya dibuat menggunakan teknologi Vue 3 dan TailwindCSS.
 
 Website kedua saya memiliki beberapa keluhan seperti load yang lambat dan berjalan lambat di beberapa perangkat lawas. Wajar saja, saya memuat 3d grafis di hero section 😂.
 
-::image-preview{src="https://assets.realitaa.dev/blog/why-i-choose-dot-dev-as-my-first-domain/web-kedua.png" alt="Screenshot web portfolio kedua saya" caption="Hero Section pada Web Portfolio Kedua Saya"}
+::image-preview{src="why-i-choose-dot-dev-as-my-first-domain/web-kedua.png" alt="Screenshot web portfolio kedua saya" caption="Hero Section pada Web Portfolio Kedua Saya" variant="preview"}
 ::
 
 Kalau kalian penasaran bagaimana saya membuat 3d grafis di hero section, saya menggunakan library [Vantajs](vantajs.com) dengan effect [Globe](https://www.vantajs.com/?effect=globe).
 
 Lalu disinilah kita, website portfolio ketiga saya, dibuat menggunakan [Nuxt 4](https://nuxt.com). 
 
-::image-preview{src="https://assets.realitaa.dev/blog/why-i-choose-dot-dev-as-my-first-domain/og/web-ketiga.png" alt="Screenshot web portfolio ketiga saya" caption="Hero Section pada Web Portfolio Ketiga Saya"}
+::image-preview{src="why-i-choose-dot-dev-as-my-first-domain/og/web-ketiga.png" alt="Screenshot web portfolio ketiga saya" caption="Hero Section pada Web Portfolio Ketiga Saya" variant="preview"}
 ::
 
 Adapun tujuan penggunaan Nuxt 4 adalah untuk meningkatkan performa dan SEO dengan menggunakan teknologi seperti [Server Side Rendering](https://developer.mozilla.org/en-US/docs/Glossary/SSR) atau [Static Site Generation](https://developer.mozilla.org/en-US/docs/Glossary/SSG). Nuxt juga memiliki fitur dan ekosistem yang luas, seperti [Nuxt Content](https://content.nuxt.com) yang memudahkan pembuatan blog.
@@ -96,7 +96,7 @@ Pada awalnya saya ingin menggunakan domain yang lebih terkenal seperti `.com`. T
 
 ## Apa itu Domain, Subdomain dan Hosting?
 
-::image-preview{src="https://www.ionos.co.uk/digitalguide/fileadmin/_processed_/3/a/csm_structure-of-an-inclusive-subdomain_92dda1c78b.webp" alt="Structure of an Inclusive Subdomain" caption="Struktur dari Domain (Sumber: ionos.co.uk)"}
+::image-preview{src="https://www.ionos.co.uk/digitalguide/fileadmin/_processed_/3/a/csm_structure-of-an-inclusive-subdomain_92dda1c78b.webp" alt="Structure of an Inclusive Subdomain" caption="Struktur dari Domain (Sumber: ionos.co.uk)" variant="external}
 ::
 
 Domain adalah alamat unik yang digunakan untuk mengakses sebuah website. Contohnya adalah `google.com`. Domain ini terdiri dari dua bagian, yaitu nama domain (`google`) dan ekstensi domain (`.com`).
@@ -120,17 +120,17 @@ Lalu bagaimana cara mendapatkan domain gratis? Salah satu cara mendapatkan domai
 
 Untuk mendaftar ke program tersebut, kamu perlu memiliki akun [Github](https://github.com) terlebih dahulu, mengatur keamanan seperti 2FA di halaman [Security](https://github.com/settings/security), mengatur [Payment Information](https://github.com/settings/billing/payment_information), dan memverifikasi status mahasiswa kamu menggunakan email kampus (.ac.id) di halaman [Education benefits](https://github.com/settings/education/benefits). Untuk diterima, kamu butuh bukti status mahasiswa (seperti Kartu Tanda Mahasiswa atau Surat Keterangan Aktif Kuliah), serta harus berada di lokasi kampus ketika mengajukan Student Benefit (lebih baik lagi jika kamu mengajukannya menggunakan WiFi kampus.)
 
-::image-preview{src="https://assets.realitaa.dev/blog/why-i-choose-dot-dev-as-my-first-domain/status-mahasiswa-github-disetujui.png" alt="Status Mahasiswa Disetujui di Pengaturan Github" caption="Status Mahasiswa Disetujui di Pengaturan Github"}
+::image-preview{src="why-i-choose-dot-dev-as-my-first-domain/status-mahasiswa-github-disetujui.png" alt="Status Mahasiswa Disetujui di Pengaturan Github" caption="Status Mahasiswa Disetujui di Pengaturan Github" variant="preview"}
 ::
 
 Setelah status mahasiswa disetujui, kunjungi kembali halaman [Student Developer Pack](https://education.github.com/pack) dan lakukan *sign-in* menggunakan akun Github yang status mahasiswanya sudah disetujui. Di beranda halaman Github Education, pergi ke menu Student Developer Pack offers, carilah penawaran dari **name.com**.
 
-::image-preview{src="https://assets.realitaa.dev/blog/why-i-choose-dot-dev-as-my-first-domain/penawaran-di-halaman-student-pack.png" alt="Penawaran di Halaman Student Pack Github" caption="Penawaran di Halaman Student Pack Github"}
+::image-preview{src="why-i-choose-dot-dev-as-my-first-domain/penawaran-di-halaman-student-pack.png" alt="Penawaran di Halaman Student Pack Github" caption="Penawaran di Halaman Student Pack Github" variant="preview"}
 ::
 
 Hubungkan akun Github ke `name.com`, lalu daftarkan akun menggunakan akun email (gmail). Jika akun Github kamu berhasil ditautkan dengan `name.com`, kamu akan melihat penawaran beberapa domain, seperti `.live`, `.app`, `.dev` dan masih banyak lagi.
 
-::image-preview{src="https://assets.realitaa.dev/blog/why-i-choose-dot-dev-as-my-first-domain/domain-gratis.png" alt="Domain gratis di name.com" caption="Domain Gratis di name.com"}
+::image-preview{src="why-i-choose-dot-dev-as-my-first-domain/domain-gratis.png" alt="Domain gratis di name.com" caption="Domain Gratis di name.com" variant="preview"}
 ::
 
 Pilihlah domain yang kamu inginkan, saya memilih domain `.dev`. Pastikan kamu juga memasukkan SSL ke keranjang ya. Untuk domain `.dev` SSL adalah kewajiban, sehingga otomatis dimasukkan ke keranjang. Lanjutkan ke pembayaran, masukkan informasi pembayaran kartu debit/kredit yang mendukung transaksi internasional, seperti Visa/MasterCard. Kamu bisa mendapatkan kartu Visa gratis di Bank Jago.
