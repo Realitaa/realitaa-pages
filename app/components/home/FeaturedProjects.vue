@@ -27,7 +27,7 @@ const { locale } = useI18n()
     <div class="flex justify-center mt-4">
       <NuxtLink
         to="/projects"
-        class="group p-2 btn btn-primary inline-flex items-center gap-2"
+        class="hvr-indigo group p-2 btn btn-primary inline-flex items-center gap-2"
       >
         {{ $t('featured_projects.section_cta') }}
         <span

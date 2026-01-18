@@ -77,7 +77,7 @@ const cardClass = computed(() => {
           <a
             v-if="cta && link"
             :href="link"
-            class="mt-6 inline-flex items-center gap-2 text-sm font-medium"
+            class="hvr-indigo mt-6 inline-flex items-center gap-2 text-sm font-medium"
             target="_blank"
             >
             {{ cta }}

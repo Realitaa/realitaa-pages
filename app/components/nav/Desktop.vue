@@ -5,7 +5,7 @@
     
     <ul class="flex items-center gap-6 text-sm font-medium text-gray-700 dark:text-gray-200">
       <li v-for="item in navList" :key="item.name">
-        <NuxtLink :to="item.href" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200" active-class="text-indigo-600 dark:text-indigo-400 font-semibold">
+        <NuxtLink :to="item.href" class="hvr-indigo transition-colors duration-200" active-class="text-indigo-600 dark:text-indigo-400 font-semibold">
           {{ item.name }}
         </NuxtLink>
       </li>

@@ -193,7 +193,7 @@ useSeoMeta({
                   <span
                     v-for="tag in article?.tags"
                     :key="tag"
-                    class="rounded-full bg-primary/10 px-3 py-1 text-sm text-primary"
+                    class="rounded-full bg-indigo-600/10 px-3 py-1 text-sm text-indigo-600 dark:text-indigo-400"
                   >
                     {{ tag }}
                   </span>
@@ -216,7 +216,7 @@ useSeoMeta({
                       :links="article?.body?.toc?.links"
                       title="Daftar Isi"
                       :active-id="activeHeading"
-                      trailingIcon="lineicons:folder"
+                      trailingIcon="mdi:rhombus-outline"
                     />
                   </aside>
                 </div>
@@ -280,7 +280,7 @@ useSeoMeta({
           :active-id="activeHeading"
           :links="article?.body?.toc?.links"
           title="Daftar Isi"
-          trailingIcon="lineicons:folder"
+          trailingIcon="mdi:rhombus-outline"
         />
       </div>
     </Transition>
@@ -291,12 +291,12 @@ useSeoMeta({
       <UButton
         color="neutral"
         variant="soft"
-        class="fixed right-0 top-1/2 -translate-y-1/2 z-40 h-14 w-15 rounded-l-xl shadow-md lg:hidden"
-        aria-label="Open Table of Contents"
+        class="fixed right-0 top-1/2 -translate-y-1/2 z-40 h-12 w-12 rounded-l-xl shadow-md lg:hidden py-1 px-2"
+        aria-label="Buka Daftar Isi"
         @click="isTocOpen = true"
       >
-        <UIcon name="i-lucide-chevron-left" class="text-lg" />
-        <UIcon name="lineicons:list" class="text-lg" />
+        <UIcon name="i-lucide-chevron-left" class="text-2xl" />
+        <UIcon name="lineicons:list" class="text-2xl" />
       </UButton>
 
       <!-- Drawer Content -->
@@ -309,7 +309,7 @@ useSeoMeta({
             title="Daftar Isi"
             @click="onTocClick"
             :open="true"
-            trailingIcon="lineicons:folder"
+            trailingIcon="mdi:rhombus-outline"
           />
         </div>
       </template>

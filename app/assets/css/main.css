@@ -9,3 +9,8 @@
 @theme {
   --font-sans: "Google Sans Flex", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+/* Hover Effect Utilities */
+.hvr-indigo {
+  @apply hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200;
+}

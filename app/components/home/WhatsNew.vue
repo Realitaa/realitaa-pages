@@ -15,7 +15,7 @@ const { data: latestBlog } = await useAsyncData('latest-blog', () => getLatestAr
             :title="item.title"
             :description="item.description"
             :image="item.image"
-            :cta="item.cta"
+            cta="Baca Selengkapnya"
             :link="item.link"
             :floatingEffect="true"
             :glow="true"
@@ -26,7 +26,7 @@ const { data: latestBlog } = await useAsyncData('latest-blog', () => getLatestAr
       <div class="flex justify-center mt-4">
       <NuxtLink
         to="/blog"
-        class="group p-2 btn btn-primary inline-flex items-center gap-2"
+        class="hvr-indigo group p-2 btn btn-primary inline-flex items-center gap-2"
       >
         {{ $t('whats_new.section_cta') }}
         <span

@@ -88,7 +88,7 @@ onUnmounted(() => {
                <div
                 class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100"
               >
-                  <span class="rounded-full flex items-center gap-2 bg-white/90 px-4 py-2 text-sm font-bold text-gray-900 shadow-lg backdrop-blur-sm">
+                  <span class="hvr-indigo rounded-full flex items-center gap-2 bg-white/90 px-4 py-2 text-sm font-bold text-gray-900 shadow-lg backdrop-blur-sm">
                     {{ $t('certificates.cta') }}
                     <Icon name="mingcute:arrow-right-up-line" />
                   </span>

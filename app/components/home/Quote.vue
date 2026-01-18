@@ -5,7 +5,7 @@ const quote = useQuote()
 <template>
   <SectionWrapper class="bg-base-100 border-t border-base-200 h-[calc(100vh-25rem)] flex items-center" containerClass="text-center max-w-4xl">
     <div class="mb-6">
-      <div class="w-24 overflow-hidden rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 mx-auto">
+      <div class="w-24 overflow-hidden rounded-full ring ring-offset-base-100 ring-offset-2 mx-auto">
         <img :src="quote.avatar" :alt="quote.author" />
       </div>
     </div>
